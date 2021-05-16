@@ -7,6 +7,14 @@ from pprint import pprint
 import time
 from z3 import Solver, Int, Or, Sum, sat
 
+
+def add_constraint(expr, solver, debug=False,msg=""):
+    if debug:
+        print(msg)
+        print(expr)
+    solver.add(expr)
+    return 1
+    
 def solve(puzzle, debug=False):
     b = puzzle["regions"]
     n = puzzle["size"]
@@ -24,70 +32,41 @@ def solve(puzzle, debug=False):
 
     for row in range(1, n+1):
         for col in range(1, n+1):
-            if debug:
-                print(f"Handling cell {row, col}")
-                print("Value must be 0 or 1:")
+            
             expr = Or(cells[row][col] == 0, cells[row][col] == 1)
-            if debug:
-                print(expr)
-            s.add(expr)
-            nc += 1
+            nc += add_constraint(Or(cells[row][col] == 0, cells[row][col] == 1),
+                                 solver=s, debug=debug, msg=f"Handling cell {row, col}, value must be 0 or 1")
 
-            if debug:
-                print("No adjacent stars")
             if row < n:
-                expr = Or(cells[row][col] == 0, cells[row+1][col] == 0)
-                if debug:
-                    print(expr)
-                s.add(expr)
-                nc += 1
+                nc += add_constraint(Or(cells[row][col] == 0, cells[row+1][col] == 0),
+                                     solver=s, debug=debug, msg="No adjacent stars, to below")
+                
             if col < n:
-                expr = Or(cells[row][col] == 0, cells[row][col+1] == 0)
-                if debug:
-                    print(expr)
-                s.add(expr)
-                nc += 1
+                nc += add_constraint(Or(cells[row][col] == 0, cells[row][col+1] == 0),
+                                     solver=s, debug=debug, msg="No adjacent stars, to the right")
+                
             if row < n and col < n:
-                expr = Or(cells[row][col] == 0, cells[row+1][col+1] == 0)
-                if debug:
-                    print(expr)
-                s.add(expr)
-                nc += 1
-            if debug:
-                print()
+                nc += add_constraint(Or(cells[row][col] == 0, cells[row+1][col+1] == 0),
+                                     solver=s, debug=debug, msg="No adjacent stars, to the right-below")
 
-        # stars per row
+
         this_row = [cells[row][col] for col in range(1,n+1)]
-        expr = Sum(*this_row) == st
-        if debug:
-            print(f"Stars per row {row}:")
-            print(expr)
-        s.add(expr)
-        nc += 1
+        nc += add_constraint(Sum(*this_row) == st,
+                             solver=s, debug=debug, msg=f"{st} stars in row {row}")
 
-    if debug:
-        print("\n%%%%% STARS PER COLUMN %%%%")
     for col in range(1, n+1):
-        # stars per column
         this_col = [cells[row][col] for row in range(1,n+1)]
-        expr = Sum(*this_col) == st
-        s.add(expr)
-        if debug:
-            print(expr)
+        nc += add_constraint(Sum(*this_col) == st,
+                             solver=s, debug=debug, msg=f"{st} stars in column {col}")
 
-    if debug:
-        print("\n%%%%% STARS PER REGION %%%%")
     for reg in range(0, max(max(b)) + 1):
         this_region = []
         for row in range(1,n+1):
             for col in range(1,n+1):
                 if b[row-1][col-1] == reg:
                     this_region += [cells[row][col]]
-                    expr = Sum(*this_region) == st
-        if debug:
-            print(expr)
-        s.add(expr)
-        nc += 1
+        nc += add_constraint(Sum(*this_region) == st,
+                             solver=s, debug=debug, msg=f"{st} stars in region {reg}")
 
     # SOLVING
     print(f"Asking Z3 to solve {nc} integer constraints in {n * n} variables..")
@@ -115,7 +94,7 @@ def main(puzzle):
     
     print("---------------------")
     start = time.time()
-    sol = solve(puzzle, debug=False)
+    sol = solve(puzzle, debug=True)
     end = time.time()
     print("---------------------")
     print(f"Solution found by Z3 after {end - start} secs:")

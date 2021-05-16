@@ -1,0 +1,2195 @@
+Solving the following 3-star 14 * 14 puzzle:
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+│  ┊  ┊  ┊  ┊  ┊  ┊  ║  ┊  ┊  ┊  ║  ┊  ┊  │ 
+ ═════════╌╌╌══════╌╌╌═════════╌╌╌╌╌╌╌╌╌╌╌╌
+│  ┊  ┊  ║  ║  ┊  ║  ┊  ┊  ┊  ║  ║  ┊  ┊  │ 
+ ═══╌╌╌═══╌╌╌╌╌╌╌╌╌════════════╌╌╌╌╌╌╌╌╌╌╌╌
+│  ║  ║  ┊  ║  ┊  ┊  ║  ┊  ║  ┊  ║  ┊  ┊  │ 
+ ╌╌╌╌╌╌╌╌╌═══╌╌╌══════╌╌╌╌╌╌╌╌╌╌╌╌══════╌╌╌
+│  ║  ║  ║  ┊  ║  ┊  ┊  ┊  ║  ┊  ┊  ┊  ║  │ 
+ ╌╌╌╌╌╌═══╌╌╌╌╌╌╌╌╌═════════╌╌╌═══╌╌╌═══╌╌╌
+│  ║  ┊  ║  ┊  ║  ║  ┊  ║  ┊  ║  ║  ║  ║  │ 
+ ╌╌╌═══╌╌╌╌╌╌═══╌╌╌═══╌╌╌══════╌╌╌═══╌╌╌═══
+│  ║  ║  ║  ║  ┊  ┊  ║  ┊  ┊  ┊  ┊  ║  ┊  │ 
+ ╌╌╌╌╌╌═══╌╌╌═════════╌╌╌╌╌╌═══╌╌╌╌╌╌╌╌╌╌╌╌
+│  ║  ┊  ┊  ┊  ║  ┊  ║  ┊  ║  ║  ┊  ║  ┊  │ 
+ ╌╌╌══════╌╌╌╌╌╌╌╌╌═══╌╌╌╌╌╌╌╌╌══════╌╌╌╌╌╌
+│  ┊  ┊  ║  ┊  ║  ║  ┊  ┊  ║  ┊  ┊  ┊  ┊  │ 
+ ╌╌╌════════════╌╌╌═════════════════════╌╌╌
+│  ║  ┊  ┊  ┊  ┊  ┊  ┊  ║  ┊  ┊  ┊  ┊  ║  │ 
+ ╌╌╌══════╌╌╌═════════╌╌╌╌╌╌═══╌╌╌═══╌╌╌╌╌╌
+│  ┊  ┊  ║  ║  ┊  ┊  ║  ║  ║  ║  ║  ║  ║  │ 
+ ╌╌╌══════╌╌╌═══╌╌╌═══╌╌╌═══╌╌╌═══╌╌╌╌╌╌═══
+│  ║  ║  ┊  ┊  ║  ║  ┊  ║  ┊  ║  ┊  ║  ┊  │ 
+ ╌╌╌╌╌╌═══╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌═══╌╌╌╌╌╌╌╌╌╌╌╌
+│  ║  ║  ║  ┊  ║  ║  ┊  ║  ║  ┊  ┊  ║  ┊  │ 
+ ╌╌╌╌╌╌╌╌╌══════╌╌╌══════╌╌╌═══╌╌╌╌╌╌══════
+│  ║  ║  ┊  ┊  ┊  ┊  ┊  ┊  ┊  ║  ┊  ┊  ┊  │ 
+ ╌╌╌╌╌╌═════════╌╌╌╌╌╌╌╌╌╌╌╌═══╌╌╌╌╌╌╌╌╌╌╌╌
+│  ║  ┊  ┊  ┊  ║  ┊  ┊  ┊  ║  ┊  ┊  ┊  ┊  │ 
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+
+---------------------
+%%%%%%% PER CELL CONDITIONS %%%%%%
+Handling cell (1, 1), value must be 0 or 1
+Or(r1_c1 == 0, r1_c1 == 1)
+No adjacent stars, to below
+Or(r1_c1 == 0, r2_c1 == 0)
+No adjacent stars, to the right
+Or(r1_c1 == 0, r1_c2 == 0)
+No adjacent stars, to the right-below
+Or(r1_c1 == 0, r2_c2 == 0)
+Handling cell (1, 2), value must be 0 or 1
+Or(r1_c2 == 0, r1_c2 == 1)
+No adjacent stars, to below
+Or(r1_c2 == 0, r2_c2 == 0)
+No adjacent stars, to the right
+Or(r1_c2 == 0, r1_c3 == 0)
+No adjacent stars, to the right-below
+Or(r1_c2 == 0, r2_c3 == 0)
+Handling cell (1, 3), value must be 0 or 1
+Or(r1_c3 == 0, r1_c3 == 1)
+No adjacent stars, to below
+Or(r1_c3 == 0, r2_c3 == 0)
+No adjacent stars, to the right
+Or(r1_c3 == 0, r1_c4 == 0)
+No adjacent stars, to the right-below
+Or(r1_c3 == 0, r2_c4 == 0)
+Handling cell (1, 4), value must be 0 or 1
+Or(r1_c4 == 0, r1_c4 == 1)
+No adjacent stars, to below
+Or(r1_c4 == 0, r2_c4 == 0)
+No adjacent stars, to the right
+Or(r1_c4 == 0, r1_c5 == 0)
+No adjacent stars, to the right-below
+Or(r1_c4 == 0, r2_c5 == 0)
+Handling cell (1, 5), value must be 0 or 1
+Or(r1_c5 == 0, r1_c5 == 1)
+No adjacent stars, to below
+Or(r1_c5 == 0, r2_c5 == 0)
+No adjacent stars, to the right
+Or(r1_c5 == 0, r1_c6 == 0)
+No adjacent stars, to the right-below
+Or(r1_c5 == 0, r2_c6 == 0)
+Handling cell (1, 6), value must be 0 or 1
+Or(r1_c6 == 0, r1_c6 == 1)
+No adjacent stars, to below
+Or(r1_c6 == 0, r2_c6 == 0)
+No adjacent stars, to the right
+Or(r1_c6 == 0, r1_c7 == 0)
+No adjacent stars, to the right-below
+Or(r1_c6 == 0, r2_c7 == 0)
+Handling cell (1, 7), value must be 0 or 1
+Or(r1_c7 == 0, r1_c7 == 1)
+No adjacent stars, to below
+Or(r1_c7 == 0, r2_c7 == 0)
+No adjacent stars, to the right
+Or(r1_c7 == 0, r1_c8 == 0)
+No adjacent stars, to the right-below
+Or(r1_c7 == 0, r2_c8 == 0)
+Handling cell (1, 8), value must be 0 or 1
+Or(r1_c8 == 0, r1_c8 == 1)
+No adjacent stars, to below
+Or(r1_c8 == 0, r2_c8 == 0)
+No adjacent stars, to the right
+Or(r1_c8 == 0, r1_c9 == 0)
+No adjacent stars, to the right-below
+Or(r1_c8 == 0, r2_c9 == 0)
+Handling cell (1, 9), value must be 0 or 1
+Or(r1_c9 == 0, r1_c9 == 1)
+No adjacent stars, to below
+Or(r1_c9 == 0, r2_c9 == 0)
+No adjacent stars, to the right
+Or(r1_c9 == 0, r1_c10 == 0)
+No adjacent stars, to the right-below
+Or(r1_c9 == 0, r2_c10 == 0)
+Handling cell (1, 10), value must be 0 or 1
+Or(r1_c10 == 0, r1_c10 == 1)
+No adjacent stars, to below
+Or(r1_c10 == 0, r2_c10 == 0)
+No adjacent stars, to the right
+Or(r1_c10 == 0, r1_c11 == 0)
+No adjacent stars, to the right-below
+Or(r1_c10 == 0, r2_c11 == 0)
+Handling cell (1, 11), value must be 0 or 1
+Or(r1_c11 == 0, r1_c11 == 1)
+No adjacent stars, to below
+Or(r1_c11 == 0, r2_c11 == 0)
+No adjacent stars, to the right
+Or(r1_c11 == 0, r1_c12 == 0)
+No adjacent stars, to the right-below
+Or(r1_c11 == 0, r2_c12 == 0)
+Handling cell (1, 12), value must be 0 or 1
+Or(r1_c12 == 0, r1_c12 == 1)
+No adjacent stars, to below
+Or(r1_c12 == 0, r2_c12 == 0)
+No adjacent stars, to the right
+Or(r1_c12 == 0, r1_c13 == 0)
+No adjacent stars, to the right-below
+Or(r1_c12 == 0, r2_c13 == 0)
+Handling cell (1, 13), value must be 0 or 1
+Or(r1_c13 == 0, r1_c13 == 1)
+No adjacent stars, to below
+Or(r1_c13 == 0, r2_c13 == 0)
+No adjacent stars, to the right
+Or(r1_c13 == 0, r1_c14 == 0)
+No adjacent stars, to the right-below
+Or(r1_c13 == 0, r2_c14 == 0)
+Handling cell (1, 14), value must be 0 or 1
+Or(r1_c14 == 0, r1_c14 == 1)
+No adjacent stars, to below
+Or(r1_c14 == 0, r2_c14 == 0)
+3 stars in row 1
+r1_c1 +
+r1_c2 +
+r1_c3 +
+r1_c4 +
+r1_c5 +
+r1_c6 +
+r1_c7 +
+r1_c8 +
+r1_c9 +
+r1_c10 +
+r1_c11 +
+r1_c12 +
+r1_c13 +
+r1_c14 ==
+3
+Handling cell (2, 1), value must be 0 or 1
+Or(r2_c1 == 0, r2_c1 == 1)
+No adjacent stars, to below
+Or(r2_c1 == 0, r3_c1 == 0)
+No adjacent stars, to the right
+Or(r2_c1 == 0, r2_c2 == 0)
+No adjacent stars, to the right-below
+Or(r2_c1 == 0, r3_c2 == 0)
+Handling cell (2, 2), value must be 0 or 1
+Or(r2_c2 == 0, r2_c2 == 1)
+No adjacent stars, to below
+Or(r2_c2 == 0, r3_c2 == 0)
+No adjacent stars, to the right
+Or(r2_c2 == 0, r2_c3 == 0)
+No adjacent stars, to the right-below
+Or(r2_c2 == 0, r3_c3 == 0)
+Handling cell (2, 3), value must be 0 or 1
+Or(r2_c3 == 0, r2_c3 == 1)
+No adjacent stars, to below
+Or(r2_c3 == 0, r3_c3 == 0)
+No adjacent stars, to the right
+Or(r2_c3 == 0, r2_c4 == 0)
+No adjacent stars, to the right-below
+Or(r2_c3 == 0, r3_c4 == 0)
+Handling cell (2, 4), value must be 0 or 1
+Or(r2_c4 == 0, r2_c4 == 1)
+No adjacent stars, to below
+Or(r2_c4 == 0, r3_c4 == 0)
+No adjacent stars, to the right
+Or(r2_c4 == 0, r2_c5 == 0)
+No adjacent stars, to the right-below
+Or(r2_c4 == 0, r3_c5 == 0)
+Handling cell (2, 5), value must be 0 or 1
+Or(r2_c5 == 0, r2_c5 == 1)
+No adjacent stars, to below
+Or(r2_c5 == 0, r3_c5 == 0)
+No adjacent stars, to the right
+Or(r2_c5 == 0, r2_c6 == 0)
+No adjacent stars, to the right-below
+Or(r2_c5 == 0, r3_c6 == 0)
+Handling cell (2, 6), value must be 0 or 1
+Or(r2_c6 == 0, r2_c6 == 1)
+No adjacent stars, to below
+Or(r2_c6 == 0, r3_c6 == 0)
+No adjacent stars, to the right
+Or(r2_c6 == 0, r2_c7 == 0)
+No adjacent stars, to the right-below
+Or(r2_c6 == 0, r3_c7 == 0)
+Handling cell (2, 7), value must be 0 or 1
+Or(r2_c7 == 0, r2_c7 == 1)
+No adjacent stars, to below
+Or(r2_c7 == 0, r3_c7 == 0)
+No adjacent stars, to the right
+Or(r2_c7 == 0, r2_c8 == 0)
+No adjacent stars, to the right-below
+Or(r2_c7 == 0, r3_c8 == 0)
+Handling cell (2, 8), value must be 0 or 1
+Or(r2_c8 == 0, r2_c8 == 1)
+No adjacent stars, to below
+Or(r2_c8 == 0, r3_c8 == 0)
+No adjacent stars, to the right
+Or(r2_c8 == 0, r2_c9 == 0)
+No adjacent stars, to the right-below
+Or(r2_c8 == 0, r3_c9 == 0)
+Handling cell (2, 9), value must be 0 or 1
+Or(r2_c9 == 0, r2_c9 == 1)
+No adjacent stars, to below
+Or(r2_c9 == 0, r3_c9 == 0)
+No adjacent stars, to the right
+Or(r2_c9 == 0, r2_c10 == 0)
+No adjacent stars, to the right-below
+Or(r2_c9 == 0, r3_c10 == 0)
+Handling cell (2, 10), value must be 0 or 1
+Or(r2_c10 == 0, r2_c10 == 1)
+No adjacent stars, to below
+Or(r2_c10 == 0, r3_c10 == 0)
+No adjacent stars, to the right
+Or(r2_c10 == 0, r2_c11 == 0)
+No adjacent stars, to the right-below
+Or(r2_c10 == 0, r3_c11 == 0)
+Handling cell (2, 11), value must be 0 or 1
+Or(r2_c11 == 0, r2_c11 == 1)
+No adjacent stars, to below
+Or(r2_c11 == 0, r3_c11 == 0)
+No adjacent stars, to the right
+Or(r2_c11 == 0, r2_c12 == 0)
+No adjacent stars, to the right-below
+Or(r2_c11 == 0, r3_c12 == 0)
+Handling cell (2, 12), value must be 0 or 1
+Or(r2_c12 == 0, r2_c12 == 1)
+No adjacent stars, to below
+Or(r2_c12 == 0, r3_c12 == 0)
+No adjacent stars, to the right
+Or(r2_c12 == 0, r2_c13 == 0)
+No adjacent stars, to the right-below
+Or(r2_c12 == 0, r3_c13 == 0)
+Handling cell (2, 13), value must be 0 or 1
+Or(r2_c13 == 0, r2_c13 == 1)
+No adjacent stars, to below
+Or(r2_c13 == 0, r3_c13 == 0)
+No adjacent stars, to the right
+Or(r2_c13 == 0, r2_c14 == 0)
+No adjacent stars, to the right-below
+Or(r2_c13 == 0, r3_c14 == 0)
+Handling cell (2, 14), value must be 0 or 1
+Or(r2_c14 == 0, r2_c14 == 1)
+No adjacent stars, to below
+Or(r2_c14 == 0, r3_c14 == 0)
+3 stars in row 2
+r2_c1 +
+r2_c2 +
+r2_c3 +
+r2_c4 +
+r2_c5 +
+r2_c6 +
+r2_c7 +
+r2_c8 +
+r2_c9 +
+r2_c10 +
+r2_c11 +
+r2_c12 +
+r2_c13 +
+r2_c14 ==
+3
+Handling cell (3, 1), value must be 0 or 1
+Or(r3_c1 == 0, r3_c1 == 1)
+No adjacent stars, to below
+Or(r3_c1 == 0, r4_c1 == 0)
+No adjacent stars, to the right
+Or(r3_c1 == 0, r3_c2 == 0)
+No adjacent stars, to the right-below
+Or(r3_c1 == 0, r4_c2 == 0)
+Handling cell (3, 2), value must be 0 or 1
+Or(r3_c2 == 0, r3_c2 == 1)
+No adjacent stars, to below
+Or(r3_c2 == 0, r4_c2 == 0)
+No adjacent stars, to the right
+Or(r3_c2 == 0, r3_c3 == 0)
+No adjacent stars, to the right-below
+Or(r3_c2 == 0, r4_c3 == 0)
+Handling cell (3, 3), value must be 0 or 1
+Or(r3_c3 == 0, r3_c3 == 1)
+No adjacent stars, to below
+Or(r3_c3 == 0, r4_c3 == 0)
+No adjacent stars, to the right
+Or(r3_c3 == 0, r3_c4 == 0)
+No adjacent stars, to the right-below
+Or(r3_c3 == 0, r4_c4 == 0)
+Handling cell (3, 4), value must be 0 or 1
+Or(r3_c4 == 0, r3_c4 == 1)
+No adjacent stars, to below
+Or(r3_c4 == 0, r4_c4 == 0)
+No adjacent stars, to the right
+Or(r3_c4 == 0, r3_c5 == 0)
+No adjacent stars, to the right-below
+Or(r3_c4 == 0, r4_c5 == 0)
+Handling cell (3, 5), value must be 0 or 1
+Or(r3_c5 == 0, r3_c5 == 1)
+No adjacent stars, to below
+Or(r3_c5 == 0, r4_c5 == 0)
+No adjacent stars, to the right
+Or(r3_c5 == 0, r3_c6 == 0)
+No adjacent stars, to the right-below
+Or(r3_c5 == 0, r4_c6 == 0)
+Handling cell (3, 6), value must be 0 or 1
+Or(r3_c6 == 0, r3_c6 == 1)
+No adjacent stars, to below
+Or(r3_c6 == 0, r4_c6 == 0)
+No adjacent stars, to the right
+Or(r3_c6 == 0, r3_c7 == 0)
+No adjacent stars, to the right-below
+Or(r3_c6 == 0, r4_c7 == 0)
+Handling cell (3, 7), value must be 0 or 1
+Or(r3_c7 == 0, r3_c7 == 1)
+No adjacent stars, to below
+Or(r3_c7 == 0, r4_c7 == 0)
+No adjacent stars, to the right
+Or(r3_c7 == 0, r3_c8 == 0)
+No adjacent stars, to the right-below
+Or(r3_c7 == 0, r4_c8 == 0)
+Handling cell (3, 8), value must be 0 or 1
+Or(r3_c8 == 0, r3_c8 == 1)
+No adjacent stars, to below
+Or(r3_c8 == 0, r4_c8 == 0)
+No adjacent stars, to the right
+Or(r3_c8 == 0, r3_c9 == 0)
+No adjacent stars, to the right-below
+Or(r3_c8 == 0, r4_c9 == 0)
+Handling cell (3, 9), value must be 0 or 1
+Or(r3_c9 == 0, r3_c9 == 1)
+No adjacent stars, to below
+Or(r3_c9 == 0, r4_c9 == 0)
+No adjacent stars, to the right
+Or(r3_c9 == 0, r3_c10 == 0)
+No adjacent stars, to the right-below
+Or(r3_c9 == 0, r4_c10 == 0)
+Handling cell (3, 10), value must be 0 or 1
+Or(r3_c10 == 0, r3_c10 == 1)
+No adjacent stars, to below
+Or(r3_c10 == 0, r4_c10 == 0)
+No adjacent stars, to the right
+Or(r3_c10 == 0, r3_c11 == 0)
+No adjacent stars, to the right-below
+Or(r3_c10 == 0, r4_c11 == 0)
+Handling cell (3, 11), value must be 0 or 1
+Or(r3_c11 == 0, r3_c11 == 1)
+No adjacent stars, to below
+Or(r3_c11 == 0, r4_c11 == 0)
+No adjacent stars, to the right
+Or(r3_c11 == 0, r3_c12 == 0)
+No adjacent stars, to the right-below
+Or(r3_c11 == 0, r4_c12 == 0)
+Handling cell (3, 12), value must be 0 or 1
+Or(r3_c12 == 0, r3_c12 == 1)
+No adjacent stars, to below
+Or(r3_c12 == 0, r4_c12 == 0)
+No adjacent stars, to the right
+Or(r3_c12 == 0, r3_c13 == 0)
+No adjacent stars, to the right-below
+Or(r3_c12 == 0, r4_c13 == 0)
+Handling cell (3, 13), value must be 0 or 1
+Or(r3_c13 == 0, r3_c13 == 1)
+No adjacent stars, to below
+Or(r3_c13 == 0, r4_c13 == 0)
+No adjacent stars, to the right
+Or(r3_c13 == 0, r3_c14 == 0)
+No adjacent stars, to the right-below
+Or(r3_c13 == 0, r4_c14 == 0)
+Handling cell (3, 14), value must be 0 or 1
+Or(r3_c14 == 0, r3_c14 == 1)
+No adjacent stars, to below
+Or(r3_c14 == 0, r4_c14 == 0)
+3 stars in row 3
+r3_c1 +
+r3_c2 +
+r3_c3 +
+r3_c4 +
+r3_c5 +
+r3_c6 +
+r3_c7 +
+r3_c8 +
+r3_c9 +
+r3_c10 +
+r3_c11 +
+r3_c12 +
+r3_c13 +
+r3_c14 ==
+3
+Handling cell (4, 1), value must be 0 or 1
+Or(r4_c1 == 0, r4_c1 == 1)
+No adjacent stars, to below
+Or(r4_c1 == 0, r5_c1 == 0)
+No adjacent stars, to the right
+Or(r4_c1 == 0, r4_c2 == 0)
+No adjacent stars, to the right-below
+Or(r4_c1 == 0, r5_c2 == 0)
+Handling cell (4, 2), value must be 0 or 1
+Or(r4_c2 == 0, r4_c2 == 1)
+No adjacent stars, to below
+Or(r4_c2 == 0, r5_c2 == 0)
+No adjacent stars, to the right
+Or(r4_c2 == 0, r4_c3 == 0)
+No adjacent stars, to the right-below
+Or(r4_c2 == 0, r5_c3 == 0)
+Handling cell (4, 3), value must be 0 or 1
+Or(r4_c3 == 0, r4_c3 == 1)
+No adjacent stars, to below
+Or(r4_c3 == 0, r5_c3 == 0)
+No adjacent stars, to the right
+Or(r4_c3 == 0, r4_c4 == 0)
+No adjacent stars, to the right-below
+Or(r4_c3 == 0, r5_c4 == 0)
+Handling cell (4, 4), value must be 0 or 1
+Or(r4_c4 == 0, r4_c4 == 1)
+No adjacent stars, to below
+Or(r4_c4 == 0, r5_c4 == 0)
+No adjacent stars, to the right
+Or(r4_c4 == 0, r4_c5 == 0)
+No adjacent stars, to the right-below
+Or(r4_c4 == 0, r5_c5 == 0)
+Handling cell (4, 5), value must be 0 or 1
+Or(r4_c5 == 0, r4_c5 == 1)
+No adjacent stars, to below
+Or(r4_c5 == 0, r5_c5 == 0)
+No adjacent stars, to the right
+Or(r4_c5 == 0, r4_c6 == 0)
+No adjacent stars, to the right-below
+Or(r4_c5 == 0, r5_c6 == 0)
+Handling cell (4, 6), value must be 0 or 1
+Or(r4_c6 == 0, r4_c6 == 1)
+No adjacent stars, to below
+Or(r4_c6 == 0, r5_c6 == 0)
+No adjacent stars, to the right
+Or(r4_c6 == 0, r4_c7 == 0)
+No adjacent stars, to the right-below
+Or(r4_c6 == 0, r5_c7 == 0)
+Handling cell (4, 7), value must be 0 or 1
+Or(r4_c7 == 0, r4_c7 == 1)
+No adjacent stars, to below
+Or(r4_c7 == 0, r5_c7 == 0)
+No adjacent stars, to the right
+Or(r4_c7 == 0, r4_c8 == 0)
+No adjacent stars, to the right-below
+Or(r4_c7 == 0, r5_c8 == 0)
+Handling cell (4, 8), value must be 0 or 1
+Or(r4_c8 == 0, r4_c8 == 1)
+No adjacent stars, to below
+Or(r4_c8 == 0, r5_c8 == 0)
+No adjacent stars, to the right
+Or(r4_c8 == 0, r4_c9 == 0)
+No adjacent stars, to the right-below
+Or(r4_c8 == 0, r5_c9 == 0)
+Handling cell (4, 9), value must be 0 or 1
+Or(r4_c9 == 0, r4_c9 == 1)
+No adjacent stars, to below
+Or(r4_c9 == 0, r5_c9 == 0)
+No adjacent stars, to the right
+Or(r4_c9 == 0, r4_c10 == 0)
+No adjacent stars, to the right-below
+Or(r4_c9 == 0, r5_c10 == 0)
+Handling cell (4, 10), value must be 0 or 1
+Or(r4_c10 == 0, r4_c10 == 1)
+No adjacent stars, to below
+Or(r4_c10 == 0, r5_c10 == 0)
+No adjacent stars, to the right
+Or(r4_c10 == 0, r4_c11 == 0)
+No adjacent stars, to the right-below
+Or(r4_c10 == 0, r5_c11 == 0)
+Handling cell (4, 11), value must be 0 or 1
+Or(r4_c11 == 0, r4_c11 == 1)
+No adjacent stars, to below
+Or(r4_c11 == 0, r5_c11 == 0)
+No adjacent stars, to the right
+Or(r4_c11 == 0, r4_c12 == 0)
+No adjacent stars, to the right-below
+Or(r4_c11 == 0, r5_c12 == 0)
+Handling cell (4, 12), value must be 0 or 1
+Or(r4_c12 == 0, r4_c12 == 1)
+No adjacent stars, to below
+Or(r4_c12 == 0, r5_c12 == 0)
+No adjacent stars, to the right
+Or(r4_c12 == 0, r4_c13 == 0)
+No adjacent stars, to the right-below
+Or(r4_c12 == 0, r5_c13 == 0)
+Handling cell (4, 13), value must be 0 or 1
+Or(r4_c13 == 0, r4_c13 == 1)
+No adjacent stars, to below
+Or(r4_c13 == 0, r5_c13 == 0)
+No adjacent stars, to the right
+Or(r4_c13 == 0, r4_c14 == 0)
+No adjacent stars, to the right-below
+Or(r4_c13 == 0, r5_c14 == 0)
+Handling cell (4, 14), value must be 0 or 1
+Or(r4_c14 == 0, r4_c14 == 1)
+No adjacent stars, to below
+Or(r4_c14 == 0, r5_c14 == 0)
+3 stars in row 4
+r4_c1 +
+r4_c2 +
+r4_c3 +
+r4_c4 +
+r4_c5 +
+r4_c6 +
+r4_c7 +
+r4_c8 +
+r4_c9 +
+r4_c10 +
+r4_c11 +
+r4_c12 +
+r4_c13 +
+r4_c14 ==
+3
+Handling cell (5, 1), value must be 0 or 1
+Or(r5_c1 == 0, r5_c1 == 1)
+No adjacent stars, to below
+Or(r5_c1 == 0, r6_c1 == 0)
+No adjacent stars, to the right
+Or(r5_c1 == 0, r5_c2 == 0)
+No adjacent stars, to the right-below
+Or(r5_c1 == 0, r6_c2 == 0)
+Handling cell (5, 2), value must be 0 or 1
+Or(r5_c2 == 0, r5_c2 == 1)
+No adjacent stars, to below
+Or(r5_c2 == 0, r6_c2 == 0)
+No adjacent stars, to the right
+Or(r5_c2 == 0, r5_c3 == 0)
+No adjacent stars, to the right-below
+Or(r5_c2 == 0, r6_c3 == 0)
+Handling cell (5, 3), value must be 0 or 1
+Or(r5_c3 == 0, r5_c3 == 1)
+No adjacent stars, to below
+Or(r5_c3 == 0, r6_c3 == 0)
+No adjacent stars, to the right
+Or(r5_c3 == 0, r5_c4 == 0)
+No adjacent stars, to the right-below
+Or(r5_c3 == 0, r6_c4 == 0)
+Handling cell (5, 4), value must be 0 or 1
+Or(r5_c4 == 0, r5_c4 == 1)
+No adjacent stars, to below
+Or(r5_c4 == 0, r6_c4 == 0)
+No adjacent stars, to the right
+Or(r5_c4 == 0, r5_c5 == 0)
+No adjacent stars, to the right-below
+Or(r5_c4 == 0, r6_c5 == 0)
+Handling cell (5, 5), value must be 0 or 1
+Or(r5_c5 == 0, r5_c5 == 1)
+No adjacent stars, to below
+Or(r5_c5 == 0, r6_c5 == 0)
+No adjacent stars, to the right
+Or(r5_c5 == 0, r5_c6 == 0)
+No adjacent stars, to the right-below
+Or(r5_c5 == 0, r6_c6 == 0)
+Handling cell (5, 6), value must be 0 or 1
+Or(r5_c6 == 0, r5_c6 == 1)
+No adjacent stars, to below
+Or(r5_c6 == 0, r6_c6 == 0)
+No adjacent stars, to the right
+Or(r5_c6 == 0, r5_c7 == 0)
+No adjacent stars, to the right-below
+Or(r5_c6 == 0, r6_c7 == 0)
+Handling cell (5, 7), value must be 0 or 1
+Or(r5_c7 == 0, r5_c7 == 1)
+No adjacent stars, to below
+Or(r5_c7 == 0, r6_c7 == 0)
+No adjacent stars, to the right
+Or(r5_c7 == 0, r5_c8 == 0)
+No adjacent stars, to the right-below
+Or(r5_c7 == 0, r6_c8 == 0)
+Handling cell (5, 8), value must be 0 or 1
+Or(r5_c8 == 0, r5_c8 == 1)
+No adjacent stars, to below
+Or(r5_c8 == 0, r6_c8 == 0)
+No adjacent stars, to the right
+Or(r5_c8 == 0, r5_c9 == 0)
+No adjacent stars, to the right-below
+Or(r5_c8 == 0, r6_c9 == 0)
+Handling cell (5, 9), value must be 0 or 1
+Or(r5_c9 == 0, r5_c9 == 1)
+No adjacent stars, to below
+Or(r5_c9 == 0, r6_c9 == 0)
+No adjacent stars, to the right
+Or(r5_c9 == 0, r5_c10 == 0)
+No adjacent stars, to the right-below
+Or(r5_c9 == 0, r6_c10 == 0)
+Handling cell (5, 10), value must be 0 or 1
+Or(r5_c10 == 0, r5_c10 == 1)
+No adjacent stars, to below
+Or(r5_c10 == 0, r6_c10 == 0)
+No adjacent stars, to the right
+Or(r5_c10 == 0, r5_c11 == 0)
+No adjacent stars, to the right-below
+Or(r5_c10 == 0, r6_c11 == 0)
+Handling cell (5, 11), value must be 0 or 1
+Or(r5_c11 == 0, r5_c11 == 1)
+No adjacent stars, to below
+Or(r5_c11 == 0, r6_c11 == 0)
+No adjacent stars, to the right
+Or(r5_c11 == 0, r5_c12 == 0)
+No adjacent stars, to the right-below
+Or(r5_c11 == 0, r6_c12 == 0)
+Handling cell (5, 12), value must be 0 or 1
+Or(r5_c12 == 0, r5_c12 == 1)
+No adjacent stars, to below
+Or(r5_c12 == 0, r6_c12 == 0)
+No adjacent stars, to the right
+Or(r5_c12 == 0, r5_c13 == 0)
+No adjacent stars, to the right-below
+Or(r5_c12 == 0, r6_c13 == 0)
+Handling cell (5, 13), value must be 0 or 1
+Or(r5_c13 == 0, r5_c13 == 1)
+No adjacent stars, to below
+Or(r5_c13 == 0, r6_c13 == 0)
+No adjacent stars, to the right
+Or(r5_c13 == 0, r5_c14 == 0)
+No adjacent stars, to the right-below
+Or(r5_c13 == 0, r6_c14 == 0)
+Handling cell (5, 14), value must be 0 or 1
+Or(r5_c14 == 0, r5_c14 == 1)
+No adjacent stars, to below
+Or(r5_c14 == 0, r6_c14 == 0)
+3 stars in row 5
+r5_c1 +
+r5_c2 +
+r5_c3 +
+r5_c4 +
+r5_c5 +
+r5_c6 +
+r5_c7 +
+r5_c8 +
+r5_c9 +
+r5_c10 +
+r5_c11 +
+r5_c12 +
+r5_c13 +
+r5_c14 ==
+3
+Handling cell (6, 1), value must be 0 or 1
+Or(r6_c1 == 0, r6_c1 == 1)
+No adjacent stars, to below
+Or(r6_c1 == 0, r7_c1 == 0)
+No adjacent stars, to the right
+Or(r6_c1 == 0, r6_c2 == 0)
+No adjacent stars, to the right-below
+Or(r6_c1 == 0, r7_c2 == 0)
+Handling cell (6, 2), value must be 0 or 1
+Or(r6_c2 == 0, r6_c2 == 1)
+No adjacent stars, to below
+Or(r6_c2 == 0, r7_c2 == 0)
+No adjacent stars, to the right
+Or(r6_c2 == 0, r6_c3 == 0)
+No adjacent stars, to the right-below
+Or(r6_c2 == 0, r7_c3 == 0)
+Handling cell (6, 3), value must be 0 or 1
+Or(r6_c3 == 0, r6_c3 == 1)
+No adjacent stars, to below
+Or(r6_c3 == 0, r7_c3 == 0)
+No adjacent stars, to the right
+Or(r6_c3 == 0, r6_c4 == 0)
+No adjacent stars, to the right-below
+Or(r6_c3 == 0, r7_c4 == 0)
+Handling cell (6, 4), value must be 0 or 1
+Or(r6_c4 == 0, r6_c4 == 1)
+No adjacent stars, to below
+Or(r6_c4 == 0, r7_c4 == 0)
+No adjacent stars, to the right
+Or(r6_c4 == 0, r6_c5 == 0)
+No adjacent stars, to the right-below
+Or(r6_c4 == 0, r7_c5 == 0)
+Handling cell (6, 5), value must be 0 or 1
+Or(r6_c5 == 0, r6_c5 == 1)
+No adjacent stars, to below
+Or(r6_c5 == 0, r7_c5 == 0)
+No adjacent stars, to the right
+Or(r6_c5 == 0, r6_c6 == 0)
+No adjacent stars, to the right-below
+Or(r6_c5 == 0, r7_c6 == 0)
+Handling cell (6, 6), value must be 0 or 1
+Or(r6_c6 == 0, r6_c6 == 1)
+No adjacent stars, to below
+Or(r6_c6 == 0, r7_c6 == 0)
+No adjacent stars, to the right
+Or(r6_c6 == 0, r6_c7 == 0)
+No adjacent stars, to the right-below
+Or(r6_c6 == 0, r7_c7 == 0)
+Handling cell (6, 7), value must be 0 or 1
+Or(r6_c7 == 0, r6_c7 == 1)
+No adjacent stars, to below
+Or(r6_c7 == 0, r7_c7 == 0)
+No adjacent stars, to the right
+Or(r6_c7 == 0, r6_c8 == 0)
+No adjacent stars, to the right-below
+Or(r6_c7 == 0, r7_c8 == 0)
+Handling cell (6, 8), value must be 0 or 1
+Or(r6_c8 == 0, r6_c8 == 1)
+No adjacent stars, to below
+Or(r6_c8 == 0, r7_c8 == 0)
+No adjacent stars, to the right
+Or(r6_c8 == 0, r6_c9 == 0)
+No adjacent stars, to the right-below
+Or(r6_c8 == 0, r7_c9 == 0)
+Handling cell (6, 9), value must be 0 or 1
+Or(r6_c9 == 0, r6_c9 == 1)
+No adjacent stars, to below
+Or(r6_c9 == 0, r7_c9 == 0)
+No adjacent stars, to the right
+Or(r6_c9 == 0, r6_c10 == 0)
+No adjacent stars, to the right-below
+Or(r6_c9 == 0, r7_c10 == 0)
+Handling cell (6, 10), value must be 0 or 1
+Or(r6_c10 == 0, r6_c10 == 1)
+No adjacent stars, to below
+Or(r6_c10 == 0, r7_c10 == 0)
+No adjacent stars, to the right
+Or(r6_c10 == 0, r6_c11 == 0)
+No adjacent stars, to the right-below
+Or(r6_c10 == 0, r7_c11 == 0)
+Handling cell (6, 11), value must be 0 or 1
+Or(r6_c11 == 0, r6_c11 == 1)
+No adjacent stars, to below
+Or(r6_c11 == 0, r7_c11 == 0)
+No adjacent stars, to the right
+Or(r6_c11 == 0, r6_c12 == 0)
+No adjacent stars, to the right-below
+Or(r6_c11 == 0, r7_c12 == 0)
+Handling cell (6, 12), value must be 0 or 1
+Or(r6_c12 == 0, r6_c12 == 1)
+No adjacent stars, to below
+Or(r6_c12 == 0, r7_c12 == 0)
+No adjacent stars, to the right
+Or(r6_c12 == 0, r6_c13 == 0)
+No adjacent stars, to the right-below
+Or(r6_c12 == 0, r7_c13 == 0)
+Handling cell (6, 13), value must be 0 or 1
+Or(r6_c13 == 0, r6_c13 == 1)
+No adjacent stars, to below
+Or(r6_c13 == 0, r7_c13 == 0)
+No adjacent stars, to the right
+Or(r6_c13 == 0, r6_c14 == 0)
+No adjacent stars, to the right-below
+Or(r6_c13 == 0, r7_c14 == 0)
+Handling cell (6, 14), value must be 0 or 1
+Or(r6_c14 == 0, r6_c14 == 1)
+No adjacent stars, to below
+Or(r6_c14 == 0, r7_c14 == 0)
+3 stars in row 6
+r6_c1 +
+r6_c2 +
+r6_c3 +
+r6_c4 +
+r6_c5 +
+r6_c6 +
+r6_c7 +
+r6_c8 +
+r6_c9 +
+r6_c10 +
+r6_c11 +
+r6_c12 +
+r6_c13 +
+r6_c14 ==
+3
+Handling cell (7, 1), value must be 0 or 1
+Or(r7_c1 == 0, r7_c1 == 1)
+No adjacent stars, to below
+Or(r7_c1 == 0, r8_c1 == 0)
+No adjacent stars, to the right
+Or(r7_c1 == 0, r7_c2 == 0)
+No adjacent stars, to the right-below
+Or(r7_c1 == 0, r8_c2 == 0)
+Handling cell (7, 2), value must be 0 or 1
+Or(r7_c2 == 0, r7_c2 == 1)
+No adjacent stars, to below
+Or(r7_c2 == 0, r8_c2 == 0)
+No adjacent stars, to the right
+Or(r7_c2 == 0, r7_c3 == 0)
+No adjacent stars, to the right-below
+Or(r7_c2 == 0, r8_c3 == 0)
+Handling cell (7, 3), value must be 0 or 1
+Or(r7_c3 == 0, r7_c3 == 1)
+No adjacent stars, to below
+Or(r7_c3 == 0, r8_c3 == 0)
+No adjacent stars, to the right
+Or(r7_c3 == 0, r7_c4 == 0)
+No adjacent stars, to the right-below
+Or(r7_c3 == 0, r8_c4 == 0)
+Handling cell (7, 4), value must be 0 or 1
+Or(r7_c4 == 0, r7_c4 == 1)
+No adjacent stars, to below
+Or(r7_c4 == 0, r8_c4 == 0)
+No adjacent stars, to the right
+Or(r7_c4 == 0, r7_c5 == 0)
+No adjacent stars, to the right-below
+Or(r7_c4 == 0, r8_c5 == 0)
+Handling cell (7, 5), value must be 0 or 1
+Or(r7_c5 == 0, r7_c5 == 1)
+No adjacent stars, to below
+Or(r7_c5 == 0, r8_c5 == 0)
+No adjacent stars, to the right
+Or(r7_c5 == 0, r7_c6 == 0)
+No adjacent stars, to the right-below
+Or(r7_c5 == 0, r8_c6 == 0)
+Handling cell (7, 6), value must be 0 or 1
+Or(r7_c6 == 0, r7_c6 == 1)
+No adjacent stars, to below
+Or(r7_c6 == 0, r8_c6 == 0)
+No adjacent stars, to the right
+Or(r7_c6 == 0, r7_c7 == 0)
+No adjacent stars, to the right-below
+Or(r7_c6 == 0, r8_c7 == 0)
+Handling cell (7, 7), value must be 0 or 1
+Or(r7_c7 == 0, r7_c7 == 1)
+No adjacent stars, to below
+Or(r7_c7 == 0, r8_c7 == 0)
+No adjacent stars, to the right
+Or(r7_c7 == 0, r7_c8 == 0)
+No adjacent stars, to the right-below
+Or(r7_c7 == 0, r8_c8 == 0)
+Handling cell (7, 8), value must be 0 or 1
+Or(r7_c8 == 0, r7_c8 == 1)
+No adjacent stars, to below
+Or(r7_c8 == 0, r8_c8 == 0)
+No adjacent stars, to the right
+Or(r7_c8 == 0, r7_c9 == 0)
+No adjacent stars, to the right-below
+Or(r7_c8 == 0, r8_c9 == 0)
+Handling cell (7, 9), value must be 0 or 1
+Or(r7_c9 == 0, r7_c9 == 1)
+No adjacent stars, to below
+Or(r7_c9 == 0, r8_c9 == 0)
+No adjacent stars, to the right
+Or(r7_c9 == 0, r7_c10 == 0)
+No adjacent stars, to the right-below
+Or(r7_c9 == 0, r8_c10 == 0)
+Handling cell (7, 10), value must be 0 or 1
+Or(r7_c10 == 0, r7_c10 == 1)
+No adjacent stars, to below
+Or(r7_c10 == 0, r8_c10 == 0)
+No adjacent stars, to the right
+Or(r7_c10 == 0, r7_c11 == 0)
+No adjacent stars, to the right-below
+Or(r7_c10 == 0, r8_c11 == 0)
+Handling cell (7, 11), value must be 0 or 1
+Or(r7_c11 == 0, r7_c11 == 1)
+No adjacent stars, to below
+Or(r7_c11 == 0, r8_c11 == 0)
+No adjacent stars, to the right
+Or(r7_c11 == 0, r7_c12 == 0)
+No adjacent stars, to the right-below
+Or(r7_c11 == 0, r8_c12 == 0)
+Handling cell (7, 12), value must be 0 or 1
+Or(r7_c12 == 0, r7_c12 == 1)
+No adjacent stars, to below
+Or(r7_c12 == 0, r8_c12 == 0)
+No adjacent stars, to the right
+Or(r7_c12 == 0, r7_c13 == 0)
+No adjacent stars, to the right-below
+Or(r7_c12 == 0, r8_c13 == 0)
+Handling cell (7, 13), value must be 0 or 1
+Or(r7_c13 == 0, r7_c13 == 1)
+No adjacent stars, to below
+Or(r7_c13 == 0, r8_c13 == 0)
+No adjacent stars, to the right
+Or(r7_c13 == 0, r7_c14 == 0)
+No adjacent stars, to the right-below
+Or(r7_c13 == 0, r8_c14 == 0)
+Handling cell (7, 14), value must be 0 or 1
+Or(r7_c14 == 0, r7_c14 == 1)
+No adjacent stars, to below
+Or(r7_c14 == 0, r8_c14 == 0)
+3 stars in row 7
+r7_c1 +
+r7_c2 +
+r7_c3 +
+r7_c4 +
+r7_c5 +
+r7_c6 +
+r7_c7 +
+r7_c8 +
+r7_c9 +
+r7_c10 +
+r7_c11 +
+r7_c12 +
+r7_c13 +
+r7_c14 ==
+3
+Handling cell (8, 1), value must be 0 or 1
+Or(r8_c1 == 0, r8_c1 == 1)
+No adjacent stars, to below
+Or(r8_c1 == 0, r9_c1 == 0)
+No adjacent stars, to the right
+Or(r8_c1 == 0, r8_c2 == 0)
+No adjacent stars, to the right-below
+Or(r8_c1 == 0, r9_c2 == 0)
+Handling cell (8, 2), value must be 0 or 1
+Or(r8_c2 == 0, r8_c2 == 1)
+No adjacent stars, to below
+Or(r8_c2 == 0, r9_c2 == 0)
+No adjacent stars, to the right
+Or(r8_c2 == 0, r8_c3 == 0)
+No adjacent stars, to the right-below
+Or(r8_c2 == 0, r9_c3 == 0)
+Handling cell (8, 3), value must be 0 or 1
+Or(r8_c3 == 0, r8_c3 == 1)
+No adjacent stars, to below
+Or(r8_c3 == 0, r9_c3 == 0)
+No adjacent stars, to the right
+Or(r8_c3 == 0, r8_c4 == 0)
+No adjacent stars, to the right-below
+Or(r8_c3 == 0, r9_c4 == 0)
+Handling cell (8, 4), value must be 0 or 1
+Or(r8_c4 == 0, r8_c4 == 1)
+No adjacent stars, to below
+Or(r8_c4 == 0, r9_c4 == 0)
+No adjacent stars, to the right
+Or(r8_c4 == 0, r8_c5 == 0)
+No adjacent stars, to the right-below
+Or(r8_c4 == 0, r9_c5 == 0)
+Handling cell (8, 5), value must be 0 or 1
+Or(r8_c5 == 0, r8_c5 == 1)
+No adjacent stars, to below
+Or(r8_c5 == 0, r9_c5 == 0)
+No adjacent stars, to the right
+Or(r8_c5 == 0, r8_c6 == 0)
+No adjacent stars, to the right-below
+Or(r8_c5 == 0, r9_c6 == 0)
+Handling cell (8, 6), value must be 0 or 1
+Or(r8_c6 == 0, r8_c6 == 1)
+No adjacent stars, to below
+Or(r8_c6 == 0, r9_c6 == 0)
+No adjacent stars, to the right
+Or(r8_c6 == 0, r8_c7 == 0)
+No adjacent stars, to the right-below
+Or(r8_c6 == 0, r9_c7 == 0)
+Handling cell (8, 7), value must be 0 or 1
+Or(r8_c7 == 0, r8_c7 == 1)
+No adjacent stars, to below
+Or(r8_c7 == 0, r9_c7 == 0)
+No adjacent stars, to the right
+Or(r8_c7 == 0, r8_c8 == 0)
+No adjacent stars, to the right-below
+Or(r8_c7 == 0, r9_c8 == 0)
+Handling cell (8, 8), value must be 0 or 1
+Or(r8_c8 == 0, r8_c8 == 1)
+No adjacent stars, to below
+Or(r8_c8 == 0, r9_c8 == 0)
+No adjacent stars, to the right
+Or(r8_c8 == 0, r8_c9 == 0)
+No adjacent stars, to the right-below
+Or(r8_c8 == 0, r9_c9 == 0)
+Handling cell (8, 9), value must be 0 or 1
+Or(r8_c9 == 0, r8_c9 == 1)
+No adjacent stars, to below
+Or(r8_c9 == 0, r9_c9 == 0)
+No adjacent stars, to the right
+Or(r8_c9 == 0, r8_c10 == 0)
+No adjacent stars, to the right-below
+Or(r8_c9 == 0, r9_c10 == 0)
+Handling cell (8, 10), value must be 0 or 1
+Or(r8_c10 == 0, r8_c10 == 1)
+No adjacent stars, to below
+Or(r8_c10 == 0, r9_c10 == 0)
+No adjacent stars, to the right
+Or(r8_c10 == 0, r8_c11 == 0)
+No adjacent stars, to the right-below
+Or(r8_c10 == 0, r9_c11 == 0)
+Handling cell (8, 11), value must be 0 or 1
+Or(r8_c11 == 0, r8_c11 == 1)
+No adjacent stars, to below
+Or(r8_c11 == 0, r9_c11 == 0)
+No adjacent stars, to the right
+Or(r8_c11 == 0, r8_c12 == 0)
+No adjacent stars, to the right-below
+Or(r8_c11 == 0, r9_c12 == 0)
+Handling cell (8, 12), value must be 0 or 1
+Or(r8_c12 == 0, r8_c12 == 1)
+No adjacent stars, to below
+Or(r8_c12 == 0, r9_c12 == 0)
+No adjacent stars, to the right
+Or(r8_c12 == 0, r8_c13 == 0)
+No adjacent stars, to the right-below
+Or(r8_c12 == 0, r9_c13 == 0)
+Handling cell (8, 13), value must be 0 or 1
+Or(r8_c13 == 0, r8_c13 == 1)
+No adjacent stars, to below
+Or(r8_c13 == 0, r9_c13 == 0)
+No adjacent stars, to the right
+Or(r8_c13 == 0, r8_c14 == 0)
+No adjacent stars, to the right-below
+Or(r8_c13 == 0, r9_c14 == 0)
+Handling cell (8, 14), value must be 0 or 1
+Or(r8_c14 == 0, r8_c14 == 1)
+No adjacent stars, to below
+Or(r8_c14 == 0, r9_c14 == 0)
+3 stars in row 8
+r8_c1 +
+r8_c2 +
+r8_c3 +
+r8_c4 +
+r8_c5 +
+r8_c6 +
+r8_c7 +
+r8_c8 +
+r8_c9 +
+r8_c10 +
+r8_c11 +
+r8_c12 +
+r8_c13 +
+r8_c14 ==
+3
+Handling cell (9, 1), value must be 0 or 1
+Or(r9_c1 == 0, r9_c1 == 1)
+No adjacent stars, to below
+Or(r9_c1 == 0, r10_c1 == 0)
+No adjacent stars, to the right
+Or(r9_c1 == 0, r9_c2 == 0)
+No adjacent stars, to the right-below
+Or(r9_c1 == 0, r10_c2 == 0)
+Handling cell (9, 2), value must be 0 or 1
+Or(r9_c2 == 0, r9_c2 == 1)
+No adjacent stars, to below
+Or(r9_c2 == 0, r10_c2 == 0)
+No adjacent stars, to the right
+Or(r9_c2 == 0, r9_c3 == 0)
+No adjacent stars, to the right-below
+Or(r9_c2 == 0, r10_c3 == 0)
+Handling cell (9, 3), value must be 0 or 1
+Or(r9_c3 == 0, r9_c3 == 1)
+No adjacent stars, to below
+Or(r9_c3 == 0, r10_c3 == 0)
+No adjacent stars, to the right
+Or(r9_c3 == 0, r9_c4 == 0)
+No adjacent stars, to the right-below
+Or(r9_c3 == 0, r10_c4 == 0)
+Handling cell (9, 4), value must be 0 or 1
+Or(r9_c4 == 0, r9_c4 == 1)
+No adjacent stars, to below
+Or(r9_c4 == 0, r10_c4 == 0)
+No adjacent stars, to the right
+Or(r9_c4 == 0, r9_c5 == 0)
+No adjacent stars, to the right-below
+Or(r9_c4 == 0, r10_c5 == 0)
+Handling cell (9, 5), value must be 0 or 1
+Or(r9_c5 == 0, r9_c5 == 1)
+No adjacent stars, to below
+Or(r9_c5 == 0, r10_c5 == 0)
+No adjacent stars, to the right
+Or(r9_c5 == 0, r9_c6 == 0)
+No adjacent stars, to the right-below
+Or(r9_c5 == 0, r10_c6 == 0)
+Handling cell (9, 6), value must be 0 or 1
+Or(r9_c6 == 0, r9_c6 == 1)
+No adjacent stars, to below
+Or(r9_c6 == 0, r10_c6 == 0)
+No adjacent stars, to the right
+Or(r9_c6 == 0, r9_c7 == 0)
+No adjacent stars, to the right-below
+Or(r9_c6 == 0, r10_c7 == 0)
+Handling cell (9, 7), value must be 0 or 1
+Or(r9_c7 == 0, r9_c7 == 1)
+No adjacent stars, to below
+Or(r9_c7 == 0, r10_c7 == 0)
+No adjacent stars, to the right
+Or(r9_c7 == 0, r9_c8 == 0)
+No adjacent stars, to the right-below
+Or(r9_c7 == 0, r10_c8 == 0)
+Handling cell (9, 8), value must be 0 or 1
+Or(r9_c8 == 0, r9_c8 == 1)
+No adjacent stars, to below
+Or(r9_c8 == 0, r10_c8 == 0)
+No adjacent stars, to the right
+Or(r9_c8 == 0, r9_c9 == 0)
+No adjacent stars, to the right-below
+Or(r9_c8 == 0, r10_c9 == 0)
+Handling cell (9, 9), value must be 0 or 1
+Or(r9_c9 == 0, r9_c9 == 1)
+No adjacent stars, to below
+Or(r9_c9 == 0, r10_c9 == 0)
+No adjacent stars, to the right
+Or(r9_c9 == 0, r9_c10 == 0)
+No adjacent stars, to the right-below
+Or(r9_c9 == 0, r10_c10 == 0)
+Handling cell (9, 10), value must be 0 or 1
+Or(r9_c10 == 0, r9_c10 == 1)
+No adjacent stars, to below
+Or(r9_c10 == 0, r10_c10 == 0)
+No adjacent stars, to the right
+Or(r9_c10 == 0, r9_c11 == 0)
+No adjacent stars, to the right-below
+Or(r9_c10 == 0, r10_c11 == 0)
+Handling cell (9, 11), value must be 0 or 1
+Or(r9_c11 == 0, r9_c11 == 1)
+No adjacent stars, to below
+Or(r9_c11 == 0, r10_c11 == 0)
+No adjacent stars, to the right
+Or(r9_c11 == 0, r9_c12 == 0)
+No adjacent stars, to the right-below
+Or(r9_c11 == 0, r10_c12 == 0)
+Handling cell (9, 12), value must be 0 or 1
+Or(r9_c12 == 0, r9_c12 == 1)
+No adjacent stars, to below
+Or(r9_c12 == 0, r10_c12 == 0)
+No adjacent stars, to the right
+Or(r9_c12 == 0, r9_c13 == 0)
+No adjacent stars, to the right-below
+Or(r9_c12 == 0, r10_c13 == 0)
+Handling cell (9, 13), value must be 0 or 1
+Or(r9_c13 == 0, r9_c13 == 1)
+No adjacent stars, to below
+Or(r9_c13 == 0, r10_c13 == 0)
+No adjacent stars, to the right
+Or(r9_c13 == 0, r9_c14 == 0)
+No adjacent stars, to the right-below
+Or(r9_c13 == 0, r10_c14 == 0)
+Handling cell (9, 14), value must be 0 or 1
+Or(r9_c14 == 0, r9_c14 == 1)
+No adjacent stars, to below
+Or(r9_c14 == 0, r10_c14 == 0)
+3 stars in row 9
+r9_c1 +
+r9_c2 +
+r9_c3 +
+r9_c4 +
+r9_c5 +
+r9_c6 +
+r9_c7 +
+r9_c8 +
+r9_c9 +
+r9_c10 +
+r9_c11 +
+r9_c12 +
+r9_c13 +
+r9_c14 ==
+3
+Handling cell (10, 1), value must be 0 or 1
+Or(r10_c1 == 0, r10_c1 == 1)
+No adjacent stars, to below
+Or(r10_c1 == 0, r11_c1 == 0)
+No adjacent stars, to the right
+Or(r10_c1 == 0, r10_c2 == 0)
+No adjacent stars, to the right-below
+Or(r10_c1 == 0, r11_c2 == 0)
+Handling cell (10, 2), value must be 0 or 1
+Or(r10_c2 == 0, r10_c2 == 1)
+No adjacent stars, to below
+Or(r10_c2 == 0, r11_c2 == 0)
+No adjacent stars, to the right
+Or(r10_c2 == 0, r10_c3 == 0)
+No adjacent stars, to the right-below
+Or(r10_c2 == 0, r11_c3 == 0)
+Handling cell (10, 3), value must be 0 or 1
+Or(r10_c3 == 0, r10_c3 == 1)
+No adjacent stars, to below
+Or(r10_c3 == 0, r11_c3 == 0)
+No adjacent stars, to the right
+Or(r10_c3 == 0, r10_c4 == 0)
+No adjacent stars, to the right-below
+Or(r10_c3 == 0, r11_c4 == 0)
+Handling cell (10, 4), value must be 0 or 1
+Or(r10_c4 == 0, r10_c4 == 1)
+No adjacent stars, to below
+Or(r10_c4 == 0, r11_c4 == 0)
+No adjacent stars, to the right
+Or(r10_c4 == 0, r10_c5 == 0)
+No adjacent stars, to the right-below
+Or(r10_c4 == 0, r11_c5 == 0)
+Handling cell (10, 5), value must be 0 or 1
+Or(r10_c5 == 0, r10_c5 == 1)
+No adjacent stars, to below
+Or(r10_c5 == 0, r11_c5 == 0)
+No adjacent stars, to the right
+Or(r10_c5 == 0, r10_c6 == 0)
+No adjacent stars, to the right-below
+Or(r10_c5 == 0, r11_c6 == 0)
+Handling cell (10, 6), value must be 0 or 1
+Or(r10_c6 == 0, r10_c6 == 1)
+No adjacent stars, to below
+Or(r10_c6 == 0, r11_c6 == 0)
+No adjacent stars, to the right
+Or(r10_c6 == 0, r10_c7 == 0)
+No adjacent stars, to the right-below
+Or(r10_c6 == 0, r11_c7 == 0)
+Handling cell (10, 7), value must be 0 or 1
+Or(r10_c7 == 0, r10_c7 == 1)
+No adjacent stars, to below
+Or(r10_c7 == 0, r11_c7 == 0)
+No adjacent stars, to the right
+Or(r10_c7 == 0, r10_c8 == 0)
+No adjacent stars, to the right-below
+Or(r10_c7 == 0, r11_c8 == 0)
+Handling cell (10, 8), value must be 0 or 1
+Or(r10_c8 == 0, r10_c8 == 1)
+No adjacent stars, to below
+Or(r10_c8 == 0, r11_c8 == 0)
+No adjacent stars, to the right
+Or(r10_c8 == 0, r10_c9 == 0)
+No adjacent stars, to the right-below
+Or(r10_c8 == 0, r11_c9 == 0)
+Handling cell (10, 9), value must be 0 or 1
+Or(r10_c9 == 0, r10_c9 == 1)
+No adjacent stars, to below
+Or(r10_c9 == 0, r11_c9 == 0)
+No adjacent stars, to the right
+Or(r10_c9 == 0, r10_c10 == 0)
+No adjacent stars, to the right-below
+Or(r10_c9 == 0, r11_c10 == 0)
+Handling cell (10, 10), value must be 0 or 1
+Or(r10_c10 == 0, r10_c10 == 1)
+No adjacent stars, to below
+Or(r10_c10 == 0, r11_c10 == 0)
+No adjacent stars, to the right
+Or(r10_c10 == 0, r10_c11 == 0)
+No adjacent stars, to the right-below
+Or(r10_c10 == 0, r11_c11 == 0)
+Handling cell (10, 11), value must be 0 or 1
+Or(r10_c11 == 0, r10_c11 == 1)
+No adjacent stars, to below
+Or(r10_c11 == 0, r11_c11 == 0)
+No adjacent stars, to the right
+Or(r10_c11 == 0, r10_c12 == 0)
+No adjacent stars, to the right-below
+Or(r10_c11 == 0, r11_c12 == 0)
+Handling cell (10, 12), value must be 0 or 1
+Or(r10_c12 == 0, r10_c12 == 1)
+No adjacent stars, to below
+Or(r10_c12 == 0, r11_c12 == 0)
+No adjacent stars, to the right
+Or(r10_c12 == 0, r10_c13 == 0)
+No adjacent stars, to the right-below
+Or(r10_c12 == 0, r11_c13 == 0)
+Handling cell (10, 13), value must be 0 or 1
+Or(r10_c13 == 0, r10_c13 == 1)
+No adjacent stars, to below
+Or(r10_c13 == 0, r11_c13 == 0)
+No adjacent stars, to the right
+Or(r10_c13 == 0, r10_c14 == 0)
+No adjacent stars, to the right-below
+Or(r10_c13 == 0, r11_c14 == 0)
+Handling cell (10, 14), value must be 0 or 1
+Or(r10_c14 == 0, r10_c14 == 1)
+No adjacent stars, to below
+Or(r10_c14 == 0, r11_c14 == 0)
+3 stars in row 10
+r10_c1 +
+r10_c2 +
+r10_c3 +
+r10_c4 +
+r10_c5 +
+r10_c6 +
+r10_c7 +
+r10_c8 +
+r10_c9 +
+r10_c10 +
+r10_c11 +
+r10_c12 +
+r10_c13 +
+r10_c14 ==
+3
+Handling cell (11, 1), value must be 0 or 1
+Or(r11_c1 == 0, r11_c1 == 1)
+No adjacent stars, to below
+Or(r11_c1 == 0, r12_c1 == 0)
+No adjacent stars, to the right
+Or(r11_c1 == 0, r11_c2 == 0)
+No adjacent stars, to the right-below
+Or(r11_c1 == 0, r12_c2 == 0)
+Handling cell (11, 2), value must be 0 or 1
+Or(r11_c2 == 0, r11_c2 == 1)
+No adjacent stars, to below
+Or(r11_c2 == 0, r12_c2 == 0)
+No adjacent stars, to the right
+Or(r11_c2 == 0, r11_c3 == 0)
+No adjacent stars, to the right-below
+Or(r11_c2 == 0, r12_c3 == 0)
+Handling cell (11, 3), value must be 0 or 1
+Or(r11_c3 == 0, r11_c3 == 1)
+No adjacent stars, to below
+Or(r11_c3 == 0, r12_c3 == 0)
+No adjacent stars, to the right
+Or(r11_c3 == 0, r11_c4 == 0)
+No adjacent stars, to the right-below
+Or(r11_c3 == 0, r12_c4 == 0)
+Handling cell (11, 4), value must be 0 or 1
+Or(r11_c4 == 0, r11_c4 == 1)
+No adjacent stars, to below
+Or(r11_c4 == 0, r12_c4 == 0)
+No adjacent stars, to the right
+Or(r11_c4 == 0, r11_c5 == 0)
+No adjacent stars, to the right-below
+Or(r11_c4 == 0, r12_c5 == 0)
+Handling cell (11, 5), value must be 0 or 1
+Or(r11_c5 == 0, r11_c5 == 1)
+No adjacent stars, to below
+Or(r11_c5 == 0, r12_c5 == 0)
+No adjacent stars, to the right
+Or(r11_c5 == 0, r11_c6 == 0)
+No adjacent stars, to the right-below
+Or(r11_c5 == 0, r12_c6 == 0)
+Handling cell (11, 6), value must be 0 or 1
+Or(r11_c6 == 0, r11_c6 == 1)
+No adjacent stars, to below
+Or(r11_c6 == 0, r12_c6 == 0)
+No adjacent stars, to the right
+Or(r11_c6 == 0, r11_c7 == 0)
+No adjacent stars, to the right-below
+Or(r11_c6 == 0, r12_c7 == 0)
+Handling cell (11, 7), value must be 0 or 1
+Or(r11_c7 == 0, r11_c7 == 1)
+No adjacent stars, to below
+Or(r11_c7 == 0, r12_c7 == 0)
+No adjacent stars, to the right
+Or(r11_c7 == 0, r11_c8 == 0)
+No adjacent stars, to the right-below
+Or(r11_c7 == 0, r12_c8 == 0)
+Handling cell (11, 8), value must be 0 or 1
+Or(r11_c8 == 0, r11_c8 == 1)
+No adjacent stars, to below
+Or(r11_c8 == 0, r12_c8 == 0)
+No adjacent stars, to the right
+Or(r11_c8 == 0, r11_c9 == 0)
+No adjacent stars, to the right-below
+Or(r11_c8 == 0, r12_c9 == 0)
+Handling cell (11, 9), value must be 0 or 1
+Or(r11_c9 == 0, r11_c9 == 1)
+No adjacent stars, to below
+Or(r11_c9 == 0, r12_c9 == 0)
+No adjacent stars, to the right
+Or(r11_c9 == 0, r11_c10 == 0)
+No adjacent stars, to the right-below
+Or(r11_c9 == 0, r12_c10 == 0)
+Handling cell (11, 10), value must be 0 or 1
+Or(r11_c10 == 0, r11_c10 == 1)
+No adjacent stars, to below
+Or(r11_c10 == 0, r12_c10 == 0)
+No adjacent stars, to the right
+Or(r11_c10 == 0, r11_c11 == 0)
+No adjacent stars, to the right-below
+Or(r11_c10 == 0, r12_c11 == 0)
+Handling cell (11, 11), value must be 0 or 1
+Or(r11_c11 == 0, r11_c11 == 1)
+No adjacent stars, to below
+Or(r11_c11 == 0, r12_c11 == 0)
+No adjacent stars, to the right
+Or(r11_c11 == 0, r11_c12 == 0)
+No adjacent stars, to the right-below
+Or(r11_c11 == 0, r12_c12 == 0)
+Handling cell (11, 12), value must be 0 or 1
+Or(r11_c12 == 0, r11_c12 == 1)
+No adjacent stars, to below
+Or(r11_c12 == 0, r12_c12 == 0)
+No adjacent stars, to the right
+Or(r11_c12 == 0, r11_c13 == 0)
+No adjacent stars, to the right-below
+Or(r11_c12 == 0, r12_c13 == 0)
+Handling cell (11, 13), value must be 0 or 1
+Or(r11_c13 == 0, r11_c13 == 1)
+No adjacent stars, to below
+Or(r11_c13 == 0, r12_c13 == 0)
+No adjacent stars, to the right
+Or(r11_c13 == 0, r11_c14 == 0)
+No adjacent stars, to the right-below
+Or(r11_c13 == 0, r12_c14 == 0)
+Handling cell (11, 14), value must be 0 or 1
+Or(r11_c14 == 0, r11_c14 == 1)
+No adjacent stars, to below
+Or(r11_c14 == 0, r12_c14 == 0)
+3 stars in row 11
+r11_c1 +
+r11_c2 +
+r11_c3 +
+r11_c4 +
+r11_c5 +
+r11_c6 +
+r11_c7 +
+r11_c8 +
+r11_c9 +
+r11_c10 +
+r11_c11 +
+r11_c12 +
+r11_c13 +
+r11_c14 ==
+3
+Handling cell (12, 1), value must be 0 or 1
+Or(r12_c1 == 0, r12_c1 == 1)
+No adjacent stars, to below
+Or(r12_c1 == 0, r13_c1 == 0)
+No adjacent stars, to the right
+Or(r12_c1 == 0, r12_c2 == 0)
+No adjacent stars, to the right-below
+Or(r12_c1 == 0, r13_c2 == 0)
+Handling cell (12, 2), value must be 0 or 1
+Or(r12_c2 == 0, r12_c2 == 1)
+No adjacent stars, to below
+Or(r12_c2 == 0, r13_c2 == 0)
+No adjacent stars, to the right
+Or(r12_c2 == 0, r12_c3 == 0)
+No adjacent stars, to the right-below
+Or(r12_c2 == 0, r13_c3 == 0)
+Handling cell (12, 3), value must be 0 or 1
+Or(r12_c3 == 0, r12_c3 == 1)
+No adjacent stars, to below
+Or(r12_c3 == 0, r13_c3 == 0)
+No adjacent stars, to the right
+Or(r12_c3 == 0, r12_c4 == 0)
+No adjacent stars, to the right-below
+Or(r12_c3 == 0, r13_c4 == 0)
+Handling cell (12, 4), value must be 0 or 1
+Or(r12_c4 == 0, r12_c4 == 1)
+No adjacent stars, to below
+Or(r12_c4 == 0, r13_c4 == 0)
+No adjacent stars, to the right
+Or(r12_c4 == 0, r12_c5 == 0)
+No adjacent stars, to the right-below
+Or(r12_c4 == 0, r13_c5 == 0)
+Handling cell (12, 5), value must be 0 or 1
+Or(r12_c5 == 0, r12_c5 == 1)
+No adjacent stars, to below
+Or(r12_c5 == 0, r13_c5 == 0)
+No adjacent stars, to the right
+Or(r12_c5 == 0, r12_c6 == 0)
+No adjacent stars, to the right-below
+Or(r12_c5 == 0, r13_c6 == 0)
+Handling cell (12, 6), value must be 0 or 1
+Or(r12_c6 == 0, r12_c6 == 1)
+No adjacent stars, to below
+Or(r12_c6 == 0, r13_c6 == 0)
+No adjacent stars, to the right
+Or(r12_c6 == 0, r12_c7 == 0)
+No adjacent stars, to the right-below
+Or(r12_c6 == 0, r13_c7 == 0)
+Handling cell (12, 7), value must be 0 or 1
+Or(r12_c7 == 0, r12_c7 == 1)
+No adjacent stars, to below
+Or(r12_c7 == 0, r13_c7 == 0)
+No adjacent stars, to the right
+Or(r12_c7 == 0, r12_c8 == 0)
+No adjacent stars, to the right-below
+Or(r12_c7 == 0, r13_c8 == 0)
+Handling cell (12, 8), value must be 0 or 1
+Or(r12_c8 == 0, r12_c8 == 1)
+No adjacent stars, to below
+Or(r12_c8 == 0, r13_c8 == 0)
+No adjacent stars, to the right
+Or(r12_c8 == 0, r12_c9 == 0)
+No adjacent stars, to the right-below
+Or(r12_c8 == 0, r13_c9 == 0)
+Handling cell (12, 9), value must be 0 or 1
+Or(r12_c9 == 0, r12_c9 == 1)
+No adjacent stars, to below
+Or(r12_c9 == 0, r13_c9 == 0)
+No adjacent stars, to the right
+Or(r12_c9 == 0, r12_c10 == 0)
+No adjacent stars, to the right-below
+Or(r12_c9 == 0, r13_c10 == 0)
+Handling cell (12, 10), value must be 0 or 1
+Or(r12_c10 == 0, r12_c10 == 1)
+No adjacent stars, to below
+Or(r12_c10 == 0, r13_c10 == 0)
+No adjacent stars, to the right
+Or(r12_c10 == 0, r12_c11 == 0)
+No adjacent stars, to the right-below
+Or(r12_c10 == 0, r13_c11 == 0)
+Handling cell (12, 11), value must be 0 or 1
+Or(r12_c11 == 0, r12_c11 == 1)
+No adjacent stars, to below
+Or(r12_c11 == 0, r13_c11 == 0)
+No adjacent stars, to the right
+Or(r12_c11 == 0, r12_c12 == 0)
+No adjacent stars, to the right-below
+Or(r12_c11 == 0, r13_c12 == 0)
+Handling cell (12, 12), value must be 0 or 1
+Or(r12_c12 == 0, r12_c12 == 1)
+No adjacent stars, to below
+Or(r12_c12 == 0, r13_c12 == 0)
+No adjacent stars, to the right
+Or(r12_c12 == 0, r12_c13 == 0)
+No adjacent stars, to the right-below
+Or(r12_c12 == 0, r13_c13 == 0)
+Handling cell (12, 13), value must be 0 or 1
+Or(r12_c13 == 0, r12_c13 == 1)
+No adjacent stars, to below
+Or(r12_c13 == 0, r13_c13 == 0)
+No adjacent stars, to the right
+Or(r12_c13 == 0, r12_c14 == 0)
+No adjacent stars, to the right-below
+Or(r12_c13 == 0, r13_c14 == 0)
+Handling cell (12, 14), value must be 0 or 1
+Or(r12_c14 == 0, r12_c14 == 1)
+No adjacent stars, to below
+Or(r12_c14 == 0, r13_c14 == 0)
+3 stars in row 12
+r12_c1 +
+r12_c2 +
+r12_c3 +
+r12_c4 +
+r12_c5 +
+r12_c6 +
+r12_c7 +
+r12_c8 +
+r12_c9 +
+r12_c10 +
+r12_c11 +
+r12_c12 +
+r12_c13 +
+r12_c14 ==
+3
+Handling cell (13, 1), value must be 0 or 1
+Or(r13_c1 == 0, r13_c1 == 1)
+No adjacent stars, to below
+Or(r13_c1 == 0, r14_c1 == 0)
+No adjacent stars, to the right
+Or(r13_c1 == 0, r13_c2 == 0)
+No adjacent stars, to the right-below
+Or(r13_c1 == 0, r14_c2 == 0)
+Handling cell (13, 2), value must be 0 or 1
+Or(r13_c2 == 0, r13_c2 == 1)
+No adjacent stars, to below
+Or(r13_c2 == 0, r14_c2 == 0)
+No adjacent stars, to the right
+Or(r13_c2 == 0, r13_c3 == 0)
+No adjacent stars, to the right-below
+Or(r13_c2 == 0, r14_c3 == 0)
+Handling cell (13, 3), value must be 0 or 1
+Or(r13_c3 == 0, r13_c3 == 1)
+No adjacent stars, to below
+Or(r13_c3 == 0, r14_c3 == 0)
+No adjacent stars, to the right
+Or(r13_c3 == 0, r13_c4 == 0)
+No adjacent stars, to the right-below
+Or(r13_c3 == 0, r14_c4 == 0)
+Handling cell (13, 4), value must be 0 or 1
+Or(r13_c4 == 0, r13_c4 == 1)
+No adjacent stars, to below
+Or(r13_c4 == 0, r14_c4 == 0)
+No adjacent stars, to the right
+Or(r13_c4 == 0, r13_c5 == 0)
+No adjacent stars, to the right-below
+Or(r13_c4 == 0, r14_c5 == 0)
+Handling cell (13, 5), value must be 0 or 1
+Or(r13_c5 == 0, r13_c5 == 1)
+No adjacent stars, to below
+Or(r13_c5 == 0, r14_c5 == 0)
+No adjacent stars, to the right
+Or(r13_c5 == 0, r13_c6 == 0)
+No adjacent stars, to the right-below
+Or(r13_c5 == 0, r14_c6 == 0)
+Handling cell (13, 6), value must be 0 or 1
+Or(r13_c6 == 0, r13_c6 == 1)
+No adjacent stars, to below
+Or(r13_c6 == 0, r14_c6 == 0)
+No adjacent stars, to the right
+Or(r13_c6 == 0, r13_c7 == 0)
+No adjacent stars, to the right-below
+Or(r13_c6 == 0, r14_c7 == 0)
+Handling cell (13, 7), value must be 0 or 1
+Or(r13_c7 == 0, r13_c7 == 1)
+No adjacent stars, to below
+Or(r13_c7 == 0, r14_c7 == 0)
+No adjacent stars, to the right
+Or(r13_c7 == 0, r13_c8 == 0)
+No adjacent stars, to the right-below
+Or(r13_c7 == 0, r14_c8 == 0)
+Handling cell (13, 8), value must be 0 or 1
+Or(r13_c8 == 0, r13_c8 == 1)
+No adjacent stars, to below
+Or(r13_c8 == 0, r14_c8 == 0)
+No adjacent stars, to the right
+Or(r13_c8 == 0, r13_c9 == 0)
+No adjacent stars, to the right-below
+Or(r13_c8 == 0, r14_c9 == 0)
+Handling cell (13, 9), value must be 0 or 1
+Or(r13_c9 == 0, r13_c9 == 1)
+No adjacent stars, to below
+Or(r13_c9 == 0, r14_c9 == 0)
+No adjacent stars, to the right
+Or(r13_c9 == 0, r13_c10 == 0)
+No adjacent stars, to the right-below
+Or(r13_c9 == 0, r14_c10 == 0)
+Handling cell (13, 10), value must be 0 or 1
+Or(r13_c10 == 0, r13_c10 == 1)
+No adjacent stars, to below
+Or(r13_c10 == 0, r14_c10 == 0)
+No adjacent stars, to the right
+Or(r13_c10 == 0, r13_c11 == 0)
+No adjacent stars, to the right-below
+Or(r13_c10 == 0, r14_c11 == 0)
+Handling cell (13, 11), value must be 0 or 1
+Or(r13_c11 == 0, r13_c11 == 1)
+No adjacent stars, to below
+Or(r13_c11 == 0, r14_c11 == 0)
+No adjacent stars, to the right
+Or(r13_c11 == 0, r13_c12 == 0)
+No adjacent stars, to the right-below
+Or(r13_c11 == 0, r14_c12 == 0)
+Handling cell (13, 12), value must be 0 or 1
+Or(r13_c12 == 0, r13_c12 == 1)
+No adjacent stars, to below
+Or(r13_c12 == 0, r14_c12 == 0)
+No adjacent stars, to the right
+Or(r13_c12 == 0, r13_c13 == 0)
+No adjacent stars, to the right-below
+Or(r13_c12 == 0, r14_c13 == 0)
+Handling cell (13, 13), value must be 0 or 1
+Or(r13_c13 == 0, r13_c13 == 1)
+No adjacent stars, to below
+Or(r13_c13 == 0, r14_c13 == 0)
+No adjacent stars, to the right
+Or(r13_c13 == 0, r13_c14 == 0)
+No adjacent stars, to the right-below
+Or(r13_c13 == 0, r14_c14 == 0)
+Handling cell (13, 14), value must be 0 or 1
+Or(r13_c14 == 0, r13_c14 == 1)
+No adjacent stars, to below
+Or(r13_c14 == 0, r14_c14 == 0)
+3 stars in row 13
+r13_c1 +
+r13_c2 +
+r13_c3 +
+r13_c4 +
+r13_c5 +
+r13_c6 +
+r13_c7 +
+r13_c8 +
+r13_c9 +
+r13_c10 +
+r13_c11 +
+r13_c12 +
+r13_c13 +
+r13_c14 ==
+3
+Handling cell (14, 1), value must be 0 or 1
+Or(r14_c1 == 0, r14_c1 == 1)
+No adjacent stars, to the right
+Or(r14_c1 == 0, r14_c2 == 0)
+Handling cell (14, 2), value must be 0 or 1
+Or(r14_c2 == 0, r14_c2 == 1)
+No adjacent stars, to the right
+Or(r14_c2 == 0, r14_c3 == 0)
+Handling cell (14, 3), value must be 0 or 1
+Or(r14_c3 == 0, r14_c3 == 1)
+No adjacent stars, to the right
+Or(r14_c3 == 0, r14_c4 == 0)
+Handling cell (14, 4), value must be 0 or 1
+Or(r14_c4 == 0, r14_c4 == 1)
+No adjacent stars, to the right
+Or(r14_c4 == 0, r14_c5 == 0)
+Handling cell (14, 5), value must be 0 or 1
+Or(r14_c5 == 0, r14_c5 == 1)
+No adjacent stars, to the right
+Or(r14_c5 == 0, r14_c6 == 0)
+Handling cell (14, 6), value must be 0 or 1
+Or(r14_c6 == 0, r14_c6 == 1)
+No adjacent stars, to the right
+Or(r14_c6 == 0, r14_c7 == 0)
+Handling cell (14, 7), value must be 0 or 1
+Or(r14_c7 == 0, r14_c7 == 1)
+No adjacent stars, to the right
+Or(r14_c7 == 0, r14_c8 == 0)
+Handling cell (14, 8), value must be 0 or 1
+Or(r14_c8 == 0, r14_c8 == 1)
+No adjacent stars, to the right
+Or(r14_c8 == 0, r14_c9 == 0)
+Handling cell (14, 9), value must be 0 or 1
+Or(r14_c9 == 0, r14_c9 == 1)
+No adjacent stars, to the right
+Or(r14_c9 == 0, r14_c10 == 0)
+Handling cell (14, 10), value must be 0 or 1
+Or(r14_c10 == 0, r14_c10 == 1)
+No adjacent stars, to the right
+Or(r14_c10 == 0, r14_c11 == 0)
+Handling cell (14, 11), value must be 0 or 1
+Or(r14_c11 == 0, r14_c11 == 1)
+No adjacent stars, to the right
+Or(r14_c11 == 0, r14_c12 == 0)
+Handling cell (14, 12), value must be 0 or 1
+Or(r14_c12 == 0, r14_c12 == 1)
+No adjacent stars, to the right
+Or(r14_c12 == 0, r14_c13 == 0)
+Handling cell (14, 13), value must be 0 or 1
+Or(r14_c13 == 0, r14_c13 == 1)
+No adjacent stars, to the right
+Or(r14_c13 == 0, r14_c14 == 0)
+Handling cell (14, 14), value must be 0 or 1
+Or(r14_c14 == 0, r14_c14 == 1)
+3 stars in row 14
+r14_c1 +
+r14_c2 +
+r14_c3 +
+r14_c4 +
+r14_c5 +
+r14_c6 +
+r14_c7 +
+r14_c8 +
+r14_c9 +
+r14_c10 +
+r14_c11 +
+r14_c12 +
+r14_c13 +
+r14_c14 ==
+3
+3 stars in column 1
+r1_c1 +
+r2_c1 +
+r3_c1 +
+r4_c1 +
+r5_c1 +
+r6_c1 +
+r7_c1 +
+r8_c1 +
+r9_c1 +
+r10_c1 +
+r11_c1 +
+r12_c1 +
+r13_c1 +
+r14_c1 ==
+3
+3 stars in column 2
+r1_c2 +
+r2_c2 +
+r3_c2 +
+r4_c2 +
+r5_c2 +
+r6_c2 +
+r7_c2 +
+r8_c2 +
+r9_c2 +
+r10_c2 +
+r11_c2 +
+r12_c2 +
+r13_c2 +
+r14_c2 ==
+3
+3 stars in column 3
+r1_c3 +
+r2_c3 +
+r3_c3 +
+r4_c3 +
+r5_c3 +
+r6_c3 +
+r7_c3 +
+r8_c3 +
+r9_c3 +
+r10_c3 +
+r11_c3 +
+r12_c3 +
+r13_c3 +
+r14_c3 ==
+3
+3 stars in column 4
+r1_c4 +
+r2_c4 +
+r3_c4 +
+r4_c4 +
+r5_c4 +
+r6_c4 +
+r7_c4 +
+r8_c4 +
+r9_c4 +
+r10_c4 +
+r11_c4 +
+r12_c4 +
+r13_c4 +
+r14_c4 ==
+3
+3 stars in column 5
+r1_c5 +
+r2_c5 +
+r3_c5 +
+r4_c5 +
+r5_c5 +
+r6_c5 +
+r7_c5 +
+r8_c5 +
+r9_c5 +
+r10_c5 +
+r11_c5 +
+r12_c5 +
+r13_c5 +
+r14_c5 ==
+3
+3 stars in column 6
+r1_c6 +
+r2_c6 +
+r3_c6 +
+r4_c6 +
+r5_c6 +
+r6_c6 +
+r7_c6 +
+r8_c6 +
+r9_c6 +
+r10_c6 +
+r11_c6 +
+r12_c6 +
+r13_c6 +
+r14_c6 ==
+3
+3 stars in column 7
+r1_c7 +
+r2_c7 +
+r3_c7 +
+r4_c7 +
+r5_c7 +
+r6_c7 +
+r7_c7 +
+r8_c7 +
+r9_c7 +
+r10_c7 +
+r11_c7 +
+r12_c7 +
+r13_c7 +
+r14_c7 ==
+3
+3 stars in column 8
+r1_c8 +
+r2_c8 +
+r3_c8 +
+r4_c8 +
+r5_c8 +
+r6_c8 +
+r7_c8 +
+r8_c8 +
+r9_c8 +
+r10_c8 +
+r11_c8 +
+r12_c8 +
+r13_c8 +
+r14_c8 ==
+3
+3 stars in column 9
+r1_c9 +
+r2_c9 +
+r3_c9 +
+r4_c9 +
+r5_c9 +
+r6_c9 +
+r7_c9 +
+r8_c9 +
+r9_c9 +
+r10_c9 +
+r11_c9 +
+r12_c9 +
+r13_c9 +
+r14_c9 ==
+3
+3 stars in column 10
+r1_c10 +
+r2_c10 +
+r3_c10 +
+r4_c10 +
+r5_c10 +
+r6_c10 +
+r7_c10 +
+r8_c10 +
+r9_c10 +
+r10_c10 +
+r11_c10 +
+r12_c10 +
+r13_c10 +
+r14_c10 ==
+3
+3 stars in column 11
+r1_c11 +
+r2_c11 +
+r3_c11 +
+r4_c11 +
+r5_c11 +
+r6_c11 +
+r7_c11 +
+r8_c11 +
+r9_c11 +
+r10_c11 +
+r11_c11 +
+r12_c11 +
+r13_c11 +
+r14_c11 ==
+3
+3 stars in column 12
+r1_c12 +
+r2_c12 +
+r3_c12 +
+r4_c12 +
+r5_c12 +
+r6_c12 +
+r7_c12 +
+r8_c12 +
+r9_c12 +
+r10_c12 +
+r11_c12 +
+r12_c12 +
+r13_c12 +
+r14_c12 ==
+3
+3 stars in column 13
+r1_c13 +
+r2_c13 +
+r3_c13 +
+r4_c13 +
+r5_c13 +
+r6_c13 +
+r7_c13 +
+r8_c13 +
+r9_c13 +
+r10_c13 +
+r11_c13 +
+r12_c13 +
+r13_c13 +
+r14_c13 ==
+3
+3 stars in column 14
+r1_c14 +
+r2_c14 +
+r3_c14 +
+r4_c14 +
+r5_c14 +
+r6_c14 +
+r7_c14 +
+r8_c14 +
+r9_c14 +
+r10_c14 +
+r11_c14 +
+r12_c14 +
+r13_c14 +
+r14_c14 ==
+3
+3 stars in region 0
+r1_c1 +
+r1_c2 +
+r1_c3 +
+r1_c4 +
+r1_c5 +
+r1_c6 +
+r1_c7 +
+r2_c4 +
+r2_c7 +
+r2_c8 +
+r2_c9 +
+r2_c10 +
+r3_c3 +
+r3_c4 +
+r4_c3 ==
+3
+3 stars in region 1
+r1_c8 +
+r1_c9 +
+r1_c10 +
+r1_c11 +
+r2_c11 +
+r3_c10 +
+r3_c11 +
+r4_c10 +
+r4_c11 +
+r4_c12 +
+r4_c13 +
+r5_c9 +
+r5_c10 +
+r5_c12 ==
+3
+3 stars in region 2
+r1_c12 +
+r1_c13 +
+r1_c14 +
+r2_c12 +
+r2_c13 +
+r2_c14 +
+r3_c12 +
+r3_c13 +
+r3_c14 +
+r4_c14 +
+r5_c14 ==
+3
+3 stars in region 3
+r2_c1 +
+r2_c2 +
+r2_c3 +
+r3_c2 +
+r4_c2 +
+r5_c2 +
+r5_c3 +
+r6_c3 ==
+3
+3 stars in region 4
+r2_c5 +
+r2_c6 +
+r3_c5 +
+r3_c6 +
+r3_c7 +
+r4_c4 +
+r4_c5 +
+r5_c4 +
+r5_c5 +
+r6_c2 +
+r6_c4 +
+r7_c2 +
+r7_c3 +
+r7_c4 +
+r7_c5 +
+r8_c4 +
+r8_c5 ==
+3
+3 stars in region 5
+r3_c1 +
+r4_c1 +
+r5_c1 +
+r6_c1 +
+r7_c1 +
+r8_c1 +
+r8_c2 +
+r8_c3 +
+r9_c1 +
+r10_c1 +
+r10_c2 +
+r10_c3 +
+r11_c1 +
+r12_c1 +
+r13_c1 +
+r14_c1 ==
+3
+3 stars in region 6
+r3_c8 +
+r3_c9 +
+r4_c6 +
+r4_c7 +
+r4_c8 +
+r4_c9 +
+r5_c6 +
+r6_c5 +
+r6_c6 +
+r6_c7 ==
+3
+3 stars in region 7
+r5_c7 +
+r5_c8 +
+r5_c11 +
+r6_c8 +
+r6_c9 +
+r6_c10 +
+r6_c11 +
+r6_c12 +
+r7_c8 +
+r7_c9 +
+r7_c11 +
+r7_c12 +
+r8_c7 +
+r8_c8 +
+r8_c9 ==
+3
+3 stars in region 8
+r5_c13 +
+r6_c13 +
+r6_c14 +
+r7_c10 +
+r7_c13 +
+r7_c14 +
+r8_c10 +
+r8_c11 +
+r8_c12 +
+r8_c13 +
+r8_c14 +
+r9_c14 +
+r10_c14 ==
+3
+3 stars in region 9
+r7_c6 +
+r7_c7 +
+r8_c6 +
+r9_c2 +
+r9_c3 +
+r9_c4 +
+r9_c5 +
+r9_c6 +
+r9_c7 +
+r9_c8 +
+r10_c4 +
+r10_c8 +
+r11_c3 +
+r11_c4 +
+r11_c5 +
+r11_c7 +
+r11_c8 +
+r12_c4 +
+r12_c5 +
+r12_c7 +
+r12_c8 ==
+3
+3 stars in region 10
+r9_c9 +
+r9_c10 +
+r9_c11 +
+r9_c12 +
+r9_c13 +
+r10_c9 +
+r10_c11 +
+r10_c13 +
+r11_c13 +
+r11_c14 +
+r12_c13 +
+r12_c14 ==
+3
+3 stars in region 11
+r10_c5 +
+r10_c6 +
+r10_c7 +
+r10_c10 +
+r11_c6 +
+r11_c9 +
+r11_c10 +
+r12_c3 +
+r12_c6 +
+r12_c9 +
+r13_c3 +
+r13_c4 +
+r13_c5 +
+r13_c6 +
+r13_c7 +
+r13_c8 +
+r13_c9 +
+r13_c10 +
+r14_c6 +
+r14_c7 +
+r14_c8 +
+r14_c9 ==
+3
+3 stars in region 12
+r10_c12 +
+r11_c11 +
+r11_c12 +
+r12_c10 +
+r12_c11 +
+r12_c12 +
+r13_c11 +
+r13_c12 +
+r13_c13 +
+r13_c14 +
+r14_c10 +
+r14_c11 +
+r14_c12 +
+r14_c13 +
+r14_c14 ==
+3
+3 stars in region 13
+r11_c2 + r12_c2 + r13_c2 + r14_c2 + r14_c3 + r14_c4 + r14_c5 ==
+3
+Asking Z3 to solve 771 integer constraints in 196 variables..
+---------------------
+Solution found by Z3 after 3.184782028198242 secs:
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+│ *┊  ┊  ┊ *┊  ┊  ┊  ║ *┊  ┊  ┊  ║  ┊  ┊  │ 
+ ═════════╌╌╌══════╌╌╌═════════╌╌╌╌╌╌╌╌╌╌╌╌
+│  ┊  ┊ *║  ║  ┊  ║  ┊  ┊  ┊ *║  ║  ┊ *┊  │ 
+ ═══╌╌╌═══╌╌╌╌╌╌╌╌╌════════════╌╌╌╌╌╌╌╌╌╌╌╌
+│  ║ *║  ┊  ║  ┊  ┊  ║ *┊  ║  ┊  ║ *┊  ┊  │ 
+ ╌╌╌╌╌╌╌╌╌═══╌╌╌══════╌╌╌╌╌╌╌╌╌╌╌╌══════╌╌╌
+│  ║  ║  ║  ┊  ║  ┊ *┊  ┊  ║ *┊  ┊  ┊  ║ *│ 
+ ╌╌╌╌╌╌═══╌╌╌╌╌╌╌╌╌═════════╌╌╌═══╌╌╌═══╌╌╌
+│  ║ *┊  ║ *┊  ║  ║  ┊  ║ *┊  ║  ║  ║  ║  │ 
+ ╌╌╌═══╌╌╌╌╌╌═══╌╌╌═══╌╌╌══════╌╌╌═══╌╌╌═══
+│  ║  ║  ║  ║  ┊ *┊  ║  ┊  ┊  ┊ *┊  ║  ┊ *│ 
+ ╌╌╌╌╌╌═══╌╌╌═════════╌╌╌╌╌╌═══╌╌╌╌╌╌╌╌╌╌╌╌
+│ *║  ┊  ┊  ┊ *║  ┊  ║  ┊  ║  ║  ┊  ║ *┊  │ 
+ ╌╌╌══════╌╌╌╌╌╌╌╌╌═══╌╌╌╌╌╌╌╌╌══════╌╌╌╌╌╌
+│  ┊  ┊  ║ *┊  ║  ║ *┊  ┊ *║  ┊  ┊  ┊  ┊  │ 
+ ╌╌╌════════════╌╌╌═════════════════════╌╌╌
+│  ║  ┊  ┊  ┊  ┊ *┊  ┊  ║  ┊  ┊  ┊ *┊  ║ *│ 
+ ╌╌╌══════╌╌╌═════════╌╌╌╌╌╌═══╌╌╌═══╌╌╌╌╌╌
+│  ┊  ┊ *║  ║  ┊  ┊  ║ *║  ║  ║ *║  ║  ║  │ 
+ ╌╌╌══════╌╌╌═══╌╌╌═══╌╌╌═══╌╌╌═══╌╌╌╌╌╌═══
+│  ║ *║  ┊  ┊  ║ *║  ┊  ║  ┊  ║  ┊  ║ *┊  │ 
+ ╌╌╌╌╌╌═══╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌═══╌╌╌╌╌╌╌╌╌╌╌╌
+│  ║  ║  ║  ┊ *║  ║  ┊  ║ *║  ┊  ┊ *║  ┊  │ 
+ ╌╌╌╌╌╌╌╌╌══════╌╌╌══════╌╌╌═══╌╌╌╌╌╌══════
+│ *║  ║  ┊  ┊  ┊  ┊ *┊  ┊  ┊  ║ *┊  ┊  ┊  │ 
+ ╌╌╌╌╌╌═════════╌╌╌╌╌╌╌╌╌╌╌╌═══╌╌╌╌╌╌╌╌╌╌╌╌
+│  ║  ┊ *┊  ┊ *║  ┊  ┊  ┊  ║ *┊  ┊  ┊  ┊  │ 
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+
+--------------------
+Performing manual Python check of solution:
+Check passed

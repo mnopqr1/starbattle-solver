@@ -31,9 +31,9 @@ Solving the following 3-star 14 * 14 puzzle:
 
 
 ---------------------
-Asking Z3 to solve 757 integer constraints in 196 variables..
+Asking Z3 to solve 771 integer constraints in 196 variables..
 ---------------------
-Solution found by Z3 after 2.7760801315307617 secs:
+Solution found by Z3 after 2.7092909812927246 secs:
 ╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
 │ *┊  ┊  ┊ *┊  ┊  ┊  ║ *┊  ┊  ┊  ║  ┊  ┊  │ 
  ═════════╌╌╌══════╌╌╌═════════╌╌╌╌╌╌╌╌╌╌╌╌
