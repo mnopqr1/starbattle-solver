@@ -1,4 +1,4 @@
-# Solving Star Battle Infinity with Z3
+# Solving Star Battle with Z3
 
 A Python script that solves [Star Battle](https://www.puzzle-star-battle.com/) puzzles, using the Z3 SMT solver. The essential work is done in ```solver.py```.
 
