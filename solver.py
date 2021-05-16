@@ -57,11 +57,7 @@ def solve(puzzle, debug=False):
                              solver=s, debug=debug, msg=f"* {st} stars in column {col}")
 
     for reg in range(0, max(max(b)) + 1):
-        this_region = []
-        for row in range(1,n+1):
-            for col in range(1,n+1):
-                if b[row-1][col-1] == reg:
-                    this_region += [cells[row][col]]
+        this_region = [cells[row][col] for row in range(1,n+1) for col in range(1,n+1) if b[row-1][col-1] == reg]
         nc += add_constraint(Sum(*this_region) == st,
                              solver=s, debug=debug, msg=f"* {st} stars in region {reg}")
 
