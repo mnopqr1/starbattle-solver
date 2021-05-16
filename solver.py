@@ -25,39 +25,36 @@ def solve(puzzle, debug=False):
     # TODO: remove the (left and top) buffer, it's no longer needed
     cells=[[ Int(f'r%d_c%d' % (i,j)) for j in range(0,n+1) ] for i in range(0,n+1) ]
 
-
     nc = 0 # number of constraints counter
-    if debug:
-        print("%%%%%%% PER CELL CONDITIONS %%%%%%")
-
+    
     for row in range(1, n+1):
         for col in range(1, n+1):
             
             expr = Or(cells[row][col] == 0, cells[row][col] == 1)
             nc += add_constraint(Or(cells[row][col] == 0, cells[row][col] == 1),
-                                 solver=s, debug=debug, msg=f"Handling cell {row, col}, value must be 0 or 1")
+                                 solver=s, debug=debug, msg=f"* Handling cell {row, col}, value must be 0 or 1")
 
             if row < n:
                 nc += add_constraint(Or(cells[row][col] == 0, cells[row+1][col] == 0),
-                                     solver=s, debug=debug, msg="No adjacent stars, to below")
+                                     solver=s, debug=debug, msg="  o No adjacent stars, to below")
                 
             if col < n:
                 nc += add_constraint(Or(cells[row][col] == 0, cells[row][col+1] == 0),
-                                     solver=s, debug=debug, msg="No adjacent stars, to the right")
+                                     solver=s, debug=debug, msg="  o No adjacent stars, to the right")
                 
             if row < n and col < n:
                 nc += add_constraint(Or(cells[row][col] == 0, cells[row+1][col+1] == 0),
-                                     solver=s, debug=debug, msg="No adjacent stars, to the right-below")
+                                     solver=s, debug=debug, msg="  o No adjacent stars, to the right-below")
 
 
         this_row = [cells[row][col] for col in range(1,n+1)]
         nc += add_constraint(Sum(*this_row) == st,
-                             solver=s, debug=debug, msg=f"{st} stars in row {row}")
+                             solver=s, debug=debug, msg=f"* {st} stars in row {row}")
 
     for col in range(1, n+1):
         this_col = [cells[row][col] for row in range(1,n+1)]
         nc += add_constraint(Sum(*this_col) == st,
-                             solver=s, debug=debug, msg=f"{st} stars in column {col}")
+                             solver=s, debug=debug, msg=f"* {st} stars in column {col}")
 
     for reg in range(0, max(max(b)) + 1):
         this_region = []
@@ -66,7 +63,7 @@ def solve(puzzle, debug=False):
                 if b[row-1][col-1] == reg:
                     this_region += [cells[row][col]]
         nc += add_constraint(Sum(*this_region) == st,
-                             solver=s, debug=debug, msg=f"{st} stars in region {reg}")
+                             solver=s, debug=debug, msg=f"* {st} stars in region {reg}")
 
     # SOLVING
     print(f"Asking Z3 to solve {nc} integer constraints in {n * n} variables..")
@@ -94,7 +91,7 @@ def main(puzzle):
     
     print("---------------------")
     start = time.time()
-    sol = solve(puzzle, debug=True)
+    sol = solve(puzzle, debug=False)
     end = time.time()
     print("---------------------")
     print(f"Solution found by Z3 after {end - start} secs:")
